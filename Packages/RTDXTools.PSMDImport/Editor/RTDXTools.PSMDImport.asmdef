@@ -1,0 +1,14 @@
+{
+    "name": "RTDXTools.Editor.PSMDImport",
+    "references": [
+        "RTDXTools.Common"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

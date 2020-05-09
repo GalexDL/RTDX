@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3373b8c73a430845918c160507e17dc, type: 3}
+  m_Name: DependencyPathIdMap
+  m_EditorClassIdentifier: 
+  Mappings:
+  - SourceAssetBundleName: 
+    SourceObject: {fileID: 4800000, guid: 2f4142347f22bc84099856906655e138, type: 3}
+    Source: 5645746071318835440
+    Target: -4379693957937237423
+  - SourceAssetBundleName: 
+    SourceObject: {fileID: 4800000, guid: 24c478313231da84b89381c01c98e247, type: 3}
+    Source: -2585609865072070643
+    Target: -4536916556522185588
+  - SourceAssetBundleName: 
+    SourceObject: {fileID: 4800000, guid: 7b22a195b0f4437f986a31d45ff8c162, type: 3}
+    Source: 8856026871567266308
+    Target: -4109536979057288706
+  - SourceAssetBundleName: 
+    SourceObject: {fileID: 4800000, guid: a2ae6d87a6bb4905beed553c4bdcaf2e, type: 3}
+    Source: 7472455963279171720
+    Target: -8387481776302554147
+  - SourceAssetBundleName: 
+    SourceObject: {fileID: 4800000, guid: 1784dee2fc7aa8b44800df0f7053fa28, type: 3}
+    Source: -4985421084872156306
+    Target: 8684719349085508434

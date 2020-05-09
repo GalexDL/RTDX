@@ -1,0 +1,11 @@
+{
+  "name": "net.techticks.rtdxtools.placementdata",
+  "version": "0.0.1",
+  "displayName": "RTDXTools.PlacementData",
+  "description": "RTDX Placement Data Editor",
+  "dependencies": {
+    "net.techticks.rtdxtools.core": "0.0.1"
+  },
+  "unity": "2018.4",
+  "unityRelease": "0b16"
+}

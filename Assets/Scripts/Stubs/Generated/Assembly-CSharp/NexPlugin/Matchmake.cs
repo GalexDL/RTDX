@@ -1,0 +1,147 @@
+﻿/*
+ * Generated code file by Il2CppInspector - http://www.djkaty.com - https://github.com/djkaty
+ */
+
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+
+// Image 46: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null - Types 4339-9572
+
+namespace NexPlugin
+{
+	public static class Matchmake // TypeDefIndex: 9334
+	{
+		// Fields
+		public const uint INVALID_GATHERINGID = 0; // Metadata: 0x00631D18
+		public const uint NUM_MATCHMAKE_SESSION_ATTRIBUTES = 6; // Metadata: 0x00631D1C
+		public const uint MATCHMAKE_SESSION_NEAREST_NEIGHBOR_ATTRIBUTE_INDEX = 1; // Metadata: 0x00631D20
+		public const uint MATCHMAKE_SESSION_BROADEN_RANGE_ATTRIBUTE_INDEX = 1; // Metadata: 0x00631D24
+		public const ulong INVALID_PERSISTENT_GATHERING_CODE = 0; // Metadata: 0x00631D28
+		public const uint PERSISTENT_GATHERING_CREATION_MAX = 4; // Metadata: 0x00631D30
+		public const uint PERSISTENT_GATHERING_PARTICIPATION_MAX = 16; // Metadata: 0x00631D34
+		public const ulong PERSISTENT_GATHERING_CHAT_PARTICIPANTS_MAX = 32; // Metadata: 0x00631D38
+		public const uint SETATTIBUTE_VECTOR_SIZE_MAX = 100; // Metadata: 0x00631D40
+		public const byte MAX_PROGRESS_SCORE = 100; // Metadata: 0x00631D44
+		public const uint UPDATE_PROGRESS_SCORE_MINIMUM_INTERVAL_TIME = 30; // Metadata: 0x00631D45
+		public const uint MAX_MATCHMAKE_SESSION_USER_PASSWORD_LENGTH = 32; // Metadata: 0x00631D49
+		public const uint MATCHMAKE_SESSION_SYSTEM_PASSWORD_LENGTH = 16; // Metadata: 0x00631D4D
+		public const uint MAX_MATCHMAKE_BROWSE_SIZE = 100; // Metadata: 0x00631D51
+		public const uint MAX_PRINCIPALID_SIZE_TO_FIND_MATCHMAKE_SESSION = 300; // Metadata: 0x00631D55
+		public const uint MAX_MATCHMAKE_BROWSE_SIZE_BY_PARTICIPANT = 300; // Metadata: 0x00631D59
+		public const uint MAX_MATCHMAKE_SESSION_BY_PARTICIPANT = 1000; // Metadata: 0x00631D5D
+		public const uint MAX_EXTRA_PARTICIPANTS = 4; // Metadata: 0x00631D61
+		public const uint MAX_P2P_SIGNATURE_KEY_LEN = 32; // Metadata: 0x00631D65
+		public const ulong RESULTRANGE_ANY_OFFSET = 4294967295; // Metadata: 0x00631D69
+		public const uint MATCHMAKE_STRING_MAX_LENGTH = 256; // Metadata: 0x00631D71
+		public const uint MATCHMAKE_BUFFER_MAX_LENGTH = 512; // Metadata: 0x00631D75
+	
+		// Nested types
+		public enum MatchmakeGeoIpResult // TypeDefIndex: 9335
+		{
+			MATCHMAKE_GEO_IP_RESULT_INVALID = 0,
+			MATCHMAKE_GEO_IP_RESULT_FOUND = 1,
+			MATCHMAKE_GEO_IP_RESULT_NOT_FOUND = 2,
+			MATCHMAKE_GEO_IP_RESULT_UNUSED = 3
+		}
+	
+		public enum MatchmakeSystemType // TypeDefIndex: 9336
+		{
+			MATCHMAKE_SYSTEM_TYPE_INVALID = 0,
+			MATCHMAKE_SYSTEM_TYPE_ANYBODY = 1,
+			MATCHMAKE_SYSTEM_TYPE_PERSISTENT_GATHERING = 5
+		}
+	
+		public enum MatchmakeSelectionMethod // TypeDefIndex: 9337
+		{
+			MATCHMAKE_SELECTION_METHOD_RANDOM = 0,
+			MATCHMAKE_SELECTION_METHOD_NEAREST_NEIGHBOR = 1,
+			MATCHMAKE_SELECTION_METHOD_BROADEN_RANGE = 2,
+			MATCHMAKE_SELECTION_METHOD_PROGRESS_SCORE = 3,
+			MATCHMAKE_SELECTION_METHOD_BROADEN_RANGE_WITH_PROGRESS_SCORE = 4,
+			MATCHMAKE_SELECTION_METHOD_SCORE_BASED = 5
+		}
+	
+		[Flags] // 0x00613FF0-0x00614000
+		public enum GatheringFlags // TypeDefIndex: 9338
+		{
+			Nothing = 0,
+			MigrateOwner = 16,
+			NoPersistentParticipation = 64,
+			AllowNoParticipant = 128,
+			ChangeOwnerByOtherHost = 512,
+			NotifyParticipationEventsToAllParticipants = 1024,
+			NotifyParticipationEventsToAllParticipantsReproducibly = 2048
+		}
+	
+		[Flags] // 0x00614000-0x00614010
+		public enum MatchmakeSessionOption0 : long // TypeDefIndex: 9339
+		{
+			MATCHMAKE_SESSION_OPTION0_NONE = 0,
+			MATCHMAKE_SESSION_OPTION0_FORCE_AUTOMATCH_DELAY = 1,
+			MATCHMAKE_SESSION_OPTION0_FORCE_AUTOMATCH_NODELAY = 2
+		}
+	
+		public enum MatchmakeOption // TypeDefIndex: 9340
+		{
+			MATCHMAKE_OPTION_NONE = 0,
+			MATCHMAKE_OPTION_RECORD_LAST_GID_FOR_PARTICIPATION_CHECK = 1,
+			MATCHMAKE_OPTION_RESERVED_1 = 2
+		}
+	
+		public enum AutoMatchmakeOption // TypeDefIndex: 9341
+		{
+			AUTO_MATCHMAKE_OPTION_NONE = 0,
+			AUTO_MATCHMAKE_OPTION_RECORD_LAST_GID_FOR_PARTICIPATION_CHECK = 1,
+			AUTO_MATCHMAKE_OPTION_UNIQUE_GATHERING_BY_CODEWORD = 2
+		}
+	
+		public enum JoinMatchmakeSessionBehavior // TypeDefIndex: 9342
+		{
+			JOIN_MATCHMAKE_SESSION_BEHAVIOR_JOIN_MYSELF = 0,
+			JOIN_MATCHMAKE_SESSION_BEHAVIOR_IM_ALREADY_JOINED = 1
+		}
+	
+		[Flags] // 0x00614010-0x00614020
+		public enum FindMatchmakeSessionResultOption // TypeDefIndex: 9343
+		{
+			FIND_MATCHMAKESESSION_RESULT_OPTION_NONE = 0,
+			FIND_MATCHMAKESESSION_RESULT_OPTION_APPLICATION_BUFFER = 1,
+			FIND_MATCHMAKESESSION_RESULT_OPTION_MATCHMAKE_PARAM = 2
+		}
+	
+		public enum PersistentGatheringType // TypeDefIndex: 9344
+		{
+			Open = 0,
+			PasswordLocked = 1,
+			Official = 2
+		}
+	
+		[Flags] // 0x00614020-0x00614030
+		public enum MatchmakeSessionModificationFlag // TypeDefIndex: 9345
+		{
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_NONE = 0,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_ATTRIBUTES = 1,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_OPEN_PARTICIPATION = 2,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_APPLICATION_BUFFER = 4,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_PROGRESS_SCORE = 8,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_OPTION0 = 16,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_MATCHMAKE_PARAM = 32,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_MATCHMAKE_PARAM_OVERRIDE = 64,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_STARTED_TIME = 128,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_USER_PASSWORD = 256,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_GAME_MODE = 512,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_DESCRIPTION = 1024,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_MIN_PARTICIPANTS = 2048,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_MAX_PARTICIPANTS = 4096,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_MATCHMAKE_SYSTEM_TYPE = 8192,
+			MATCHMAKE_SESSION_MODIFICATION_FLAG_CODEWORD = 16384
+		}
+	
+		public enum AnybodyParticipationPolicyArgument // TypeDefIndex: 9346
+		{
+			WithoutClose = 0,
+			CloseOnOwnerMigration = 1
+		}
+	}
+}
