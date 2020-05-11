@@ -9,6 +9,6 @@ public static class SkyEditorTest
    [MenuItem("Tools/SkyEditor Test")]
    public static void TestSkyEditor()
    {
-      Debug.Log(string.Join(",", SkyEditorHelpers.GetRom().GetFixedPokemon().Entries.Select(e => e.PokemonId).Take(100)));
+      Debug.Log(string.Join(",", SkyEditorHelpers.GetRom().GetStarters().Starters.Select(e => e.PokemonName)));
    }
 }
