@@ -1,10 +1,10 @@
 {
-    "name": "RTDXTools.Common",
-    "references": [],
-    "optionalUnityReferences": [],
-    "includePlatforms": [
-        "Editor"
+    "name": "RTDXTools.Dependencies.SkyEditor",
+    "references": [
+        "RTDXTools.Common"
     ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

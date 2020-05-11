@@ -10,7 +10,7 @@ using ActUtility;
 using UnityEngine;
 
 // Image 46: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null - Types 4339-9572
-
+[CreateAssetMenu]
 public class GroundTownNpcDatabase : ScriptableObject // TypeDefIndex: 5057
 {
 	// Fields

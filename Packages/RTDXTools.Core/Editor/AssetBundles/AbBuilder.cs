@@ -7,13 +7,13 @@ using UnityEngine;
 
 public class AbBuilder : EditorWindow
 {
-    public const string TempPath = "AssetBundleBuildTemp/";
+    public const string TempPath = "AssetBundleBuildTemp";
 
     /// <summary>
     /// AssetBundles that shouldn't be copied to the romfs since they are
     /// referenced in game and contain files (e.g. shaders) we can't replaace
     /// </summary>
-    private static readonly string[] CopyBlacklist = new[]
+    private static readonly string[] CopyBlacklist =
     {
         "shader_pack"
     };
@@ -77,9 +77,10 @@ public class AbBuilder : EditorWindow
 
         if (GUILayout.Button("Build"))
         {
-            if (!Directory.Exists(Directory.GetCurrentDirectory() + "/" + TempPath))
+            string path = Path.Combine(Directory.GetCurrentDirectory(), TempPath);
+            if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/" + TempPath);
+                Directory.CreateDirectory(path);
             }
             
             EditorUtility.DisplayProgressBar("Building AssetBundles...", "", 0f);
@@ -89,11 +90,11 @@ public class AbBuilder : EditorWindow
 
             foreach (var bundleName in _bundleNames)
             {
-                string fileName = Directory.GetCurrentDirectory() + "/" + TempPath + bundleName;
+                string fileName = Path.Combine(Directory.GetCurrentDirectory() + "/", TempPath, bundleName);
                 if (!File.Exists(fileName))
                 {
-                    Debug.LogError(fileName + " does not exist.");
-                    return;
+                    Debug.LogWarning(fileName + " does not exist.");
+                    continue;
                 }
 
                 if (!_skipPostprocess)
@@ -107,8 +108,7 @@ public class AbBuilder : EditorWindow
                 string destFile = _buildPath + bundleName + ".ab";
                 File.Copy(fileName, destFile, true);
                 Debug.Log("Saved to " + _buildPath);
-            
-            
+                
                 _buildInfo = "Finished at " + DateTime.Now.ToShortTimeString();
             } 
             EditorUtility.ClearProgressBar();

@@ -11,15 +11,16 @@ public class RomTools : EditorWindow
     private const string KeysPath = "Tools/hacpack/prod.keys";
     private const string TitleId = "01003d200baa2000";
     
-    private string _exefsPath = "";
-    private string _romfsPath = "";
+    private string _romPath = "";
     
     private string _emulatorPath = "";
     private bool _autoLaunch;
 
     private Process _hacpack;
     
-    public static string GetRomFsPath() => EditorPrefs.GetString("romfspath", "");
+    public static string GetRomPath() => EditorPrefs.GetString("rompath", "");
+    public static string GetExeFsPath() => Path.Combine(GetRomPath(), "exefs");
+    public static string GetRomFsPath() => Path.Combine(GetRomPath(), "romfs");
     public static string GetAssetBundlesPath() => Path.Combine(GetRomFsPath(), "Data", "StreamingAssets", "ab");
     
     [MenuItem("Tools/RomTools", false, 0)]
@@ -30,8 +31,7 @@ public class RomTools : EditorWindow
 
     private void OnEnable()
     {
-        _exefsPath = EditorPrefs.GetString("exefspath", "");
-        _romfsPath = EditorPrefs.GetString("romfspath", "");
+        _romPath = GetRomPath();
         _emulatorPath = EditorPrefs.GetString("emulatorPath", "");
         _autoLaunch = EditorPrefs.GetBool("autoLaunch");
     }
@@ -39,8 +39,7 @@ public class RomTools : EditorWindow
     private void OnGUI()
     {
         EditorGUI.BeginChangeCheck();
-        _exefsPath = EditorGUILayout.TextField("ExeFSPath", _exefsPath);
-        _romfsPath = EditorGUILayout.TextField("RomFSPath", _romfsPath);
+        _romPath = EditorGUILayout.TextField("Rom Path", _romPath);
         
         EditorGUILayout.Space();
         _emulatorPath = EditorGUILayout.TextField("Emulator path", _emulatorPath);
@@ -48,8 +47,7 @@ public class RomTools : EditorWindow
 
         if (EditorGUI.EndChangeCheck())
         {
-            EditorPrefs.SetString("exefspath", _exefsPath);
-            EditorPrefs.SetString("romfspath", _romfsPath);
+            EditorPrefs.SetString("rompath", _romPath);
             EditorPrefs.SetString("emulatorPath", _emulatorPath);
             EditorPrefs.SetBool("autoLaunch", _autoLaunch);
         }
@@ -113,7 +111,7 @@ public class RomTools : EditorWindow
 
         string args = "-k " + Directory.GetCurrentDirectory() + "/" + KeysPath +
                       " -o Build --ncatype program --titleid "
-                      + TitleId + " --exefsdir " + _exefsPath + " --romfsdir " + _romfsPath;
+                      + TitleId + " --exefsdir " + GetExeFsPath() + " --romfsdir " + GetRomFsPath();
             
         Debug.Log(args);
         _hacpack = new Process(); 

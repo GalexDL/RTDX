@@ -1,0 +1,11 @@
+{
+  "name": "net.techticks.rtdxtools.dependencies.skyeditor",
+  "version": "0.0.1",
+  "displayName": "RTDXTools.Dependencies.SkyEditor",
+  "dependencies": {
+    "net.techticks.rtdxtools.core": "0.0.1"
+  },
+  "description": "Sky Editor",
+  "unity": "2018.4",
+  "unityRelease": "0b16"
+}
