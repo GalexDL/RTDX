@@ -43,9 +43,11 @@ public class PSMDModelImporter
         string targetDir = Path.Combine("Assets", "GameAssets", "Models", modelManifest.TargetName);
         string targetTexturesDir = Path.Combine(targetDir, "Textures");
         string targetMaterialsDir = Path.Combine(targetDir, "Materials");
+        string targetMeshesDir = Path.Combine(targetDir, "Meshes");
         EnsureDirectoryExists(targetDir);
         EnsureDirectoryExists(targetTexturesDir);
         EnsureDirectoryExists(targetMaterialsDir);
+        EnsureDirectoryExists(targetMeshesDir);
         
         string modelPath = Path.Combine(targetDir, $"{modelManifest.TargetName}.dae");
         new DAE(spicaHandle, 0).Save(modelPath);
@@ -83,7 +85,7 @@ public class PSMDModelImporter
         modelImporter.SaveAndReimport();
         
         string prefabPath = Path.Combine(targetDir, $"{modelManifest.TargetName}.prefab").ToAssetPath();
-        ImportHelpers.GeneratePrefabForModel(modelPath, prefabPath);
+        ImportHelpers.GeneratePrefabForModel(modelPath, prefabPath, targetMeshesDir);
 
         AssetImporter.GetAtPath(prefabPath).assetBundleName = modelManifest.TargetName;
     }

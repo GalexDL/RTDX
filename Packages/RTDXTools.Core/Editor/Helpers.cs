@@ -268,27 +268,29 @@ public class Helpers
         if (srcMesh == null)
             return;
 
+        CreateVertexPaintedClone(srcMesh, color, $"Assets/{srcMesh.name}_{colorName}.asset");
+    }
+
+    public static Mesh CreateVertexPaintedClone(Mesh srcMesh, Color color, string path)
+    {
         var newMesh = Object.Instantiate(srcMesh);
         var colors = new Color[newMesh.vertexCount];
         for (int i = 0; i < colors.Length; i++)
         {
-            colors[i] = new Color(0, 0, 0, 255);
+            colors[i] = color;
         }
 
         newMesh.colors = colors;
-        AssetDatabase.CreateAsset(newMesh, $"Assets/{srcMesh.name}_{colorName}.asset");
+        AssetDatabase.CreateAsset(newMesh, path);
+        return newMesh;
     }
-
+    
     public static AssetBundle GetAssetBundle(string path, string name)
     {
-        if (!path.EndsWith("/"))
-        {
-            path += "/";
-        }
         var assetBundle = AssetBundle.GetAllLoadedAssetBundles().FirstOrDefault(ab => ab.name == name);
         if (assetBundle == null)
         {
-            assetBundle = AssetBundle.LoadFromFile(path + name);
+            assetBundle = AssetBundle.LoadFromFile(Path.Combine(path, name));
         }
 
         return assetBundle;

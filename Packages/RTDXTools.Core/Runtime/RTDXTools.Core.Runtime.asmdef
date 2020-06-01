@@ -1,0 +1,14 @@
+{
+    "name": "RTDXTools.Core.Runtime",
+    "references": [
+        "RTDXTools.Core.Editor"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

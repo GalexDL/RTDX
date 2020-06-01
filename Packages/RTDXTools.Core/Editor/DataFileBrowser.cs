@@ -11,6 +11,7 @@ public class DataFileBrowser : EditorWindow
     private Vector2 _scrollPos;
 
     private bool _onlyShowEditableFiles = true;
+    private bool _useSourceFile = false;
     private bool _showFileExplorer = true;
     private IDataFileEditor _openEditor;
 
@@ -46,17 +47,22 @@ public class DataFileBrowser : EditorWindow
 
     private void OnGUI()
     {
-        using (var changeCheck = new EditorGUI.ChangeCheckScope())
-        {
-            _onlyShowEditableFiles = EditorGUILayout.ToggleLeft("Only show editable files", _onlyShowEditableFiles);
-            if (changeCheck.changed)
-            {
-                Refresh();
-            }
-        }
         _showFileExplorer = EditorGUILayout.ToggleLeft("Show File Browser", _showFileExplorer);
         if (_showFileExplorer)
         {
+            using (var changeCheck = new EditorGUI.ChangeCheckScope())
+            {
+                _onlyShowEditableFiles = EditorGUILayout.ToggleLeft("Only show editable files", _onlyShowEditableFiles);
+                _useSourceFile = EditorGUILayout.ToggleLeft(new GUIContent("Force using source files", "If checked, the " +
+                   "editor will open files from the source romfs directory instead of the build romfs directory. If unchecked, it will " +
+                   "open the file in the build directory or otherwise fall back to the source directory (LayeredFS)." +
+                   "The editor will always save to the build directory."),
+                    _useSourceFile);
+                if (changeCheck.changed)
+                {
+                    Refresh();
+                }
+            }
             if (GUILayout.Button("Refresh"))
             {
                 Refresh();
@@ -123,30 +129,35 @@ public class DataFileBrowser : EditorWindow
 
     private void DrawNode(Node node)
     {
-        if (node.File is DirectoryInfo)
+        if (node.SourceFile is DirectoryInfo)
         {
-            node.Expanded = EditorGUILayout.Foldout(node.Expanded, node.File.Name);
+            node.Expanded = EditorGUILayout.Foldout(node.Expanded, node.SourceFile.Name);
         }
         else
         {
             using (new EditorGUILayout.HorizontalScope())
             {
                 var factory = node.HandlerFactory;
-                EditorGUILayout.LabelField(node.File.Name);
+                EditorGUILayout.LabelField(node.SourceFile.Name);
 
                 if (factory != null)
                 {
-                    if (_openEditor?.GetType() == factory.EditorType && _openEditor.CurrentFile != node.File)
+                    if (_openEditor?.GetType() == factory.EditorType && _openEditor?.CurrentFile != node)
                     {
                         if (GUILayout.Button("Overwrite", GUILayout.Width(80)))
                         {
                             if (EditorUtility.DisplayDialog("Overwrite with current file",
-                                $"Are you sure that you want to overwrite '{node.File.Name}' with the currently open file?" +
+                                $"Are you sure that you want to overwrite '{node.SourceFile.Name}' with the currently open file?" +
                                 $"(You must save the open file first to apply all changes.)", "OK", "Cancel"))
                             {
-                                _openEditor.CurrentFile.CopyTo(_openEditor.CurrentFile.FullName + ".bak", true);
-                                File.Copy(_openEditor.CurrentFile.FullName, node.File.FullName, true);
-                                node.File.Refresh();
+                                var sourceFile = (FileInfo) (_useSourceFile ? _openEditor.CurrentFile.SourceFile : _openEditor.CurrentFile.LayeredFSFile);
+                                if (node.DestinationFile.Exists)
+                                {
+                                    ((FileInfo) node.DestinationFile).CopyTo(node.DestinationFile.FullName + ".bak", true);
+                                }
+
+                                sourceFile.CopyTo(node.DestinationFile.FullName, true);
+                                node.DestinationFile.Refresh();
                             }
                         }
                     }
@@ -157,7 +168,7 @@ public class DataFileBrowser : EditorWindow
                         try
                         {
                             var handler = factory.Create();
-                            handler.Open((FileInfo) node.File);
+                            handler.Open(node, _useSourceFile);
                             _openEditor = handler;
                         }
                         catch (Exception e)
@@ -182,25 +193,19 @@ public class DataFileBrowser : EditorWindow
 
     private void Refresh()
     {
-        string romfsPath = EditorHelpers.GetRomFsPath();
+        string romfsPath = ConfigManager.RomFsSourcePath;
         if (!Directory.Exists(romfsPath))
         {
             // TODO: show error message
             return;
         }
 
-        var rootDir = new DirectoryInfo(romfsPath);
-        var dataDir = rootDir.EnumerateDirectories().FirstOrDefault(dir => dir.Name.ToLower() == "data");
-        if (dataDir != null)
+        _root = new Node
         {
-            rootDir = dataDir;
-        }
-        var streamingAssetsDir = rootDir.EnumerateDirectories().FirstOrDefault(dir => dir.Name.ToLower() == "streamingassets");
-        if (streamingAssetsDir != null)
-        {
-            rootDir = streamingAssetsDir;
-        }
-        _root = new Node {File = rootDir, Expanded = true};
+            SourceFile = new DirectoryInfo(ConfigManager.StreamingAssetsSourcePath), 
+            DestinationFile = new DirectoryInfo(ConfigManager.StreamingAssetsBuildPath),
+            Expanded = true
+        };
        
         ProcessDirectory(_root);
         
@@ -208,11 +213,11 @@ public class DataFileBrowser : EditorWindow
         {
             child.Expanded = true;
 
-            if (child.File.Name.ToLower() == "native_data")
+            if (child.SourceFile.Name.ToLower() == "native_data")
             {
                 foreach (var innerChild in child.Children)
                 {
-                    innerChild.Expanded = innerChild.File.Name.ToLower() == "script";
+                    innerChild.Expanded = innerChild.SourceFile.Name.ToLower() == "script";
                 }
             }
         }
@@ -231,34 +236,41 @@ public class DataFileBrowser : EditorWindow
         return null;
     }
 
-    private void ProcessDirectory(Node current)
+    private void ProcessDirectory(Node source)
     {
-        foreach (var info in ((DirectoryInfo) current.File).EnumerateDirectories())
-        {
-            var node = new Node {File = info};
-            ProcessDirectory(node);
-
-            current.Children.Add(node);
-        }
-        foreach (var info in ((DirectoryInfo) current.File).EnumerateFiles())
+        foreach (var info in ((DirectoryInfo) source.SourceFile).EnumerateDirectories())
         {
             var node = new Node
             {
-                File = info,
+                SourceFile = info, 
+                DestinationFile = new DirectoryInfo(source.DestinationFile.FullName + Path.DirectorySeparatorChar + info.Name)
+            };
+            ProcessDirectory(node);
+
+            source.Children.Add(node);
+        }
+        foreach (var info in ((DirectoryInfo) source.SourceFile).EnumerateFiles())
+        {
+            var node = new Node
+            {
+                SourceFile = info,
+                DestinationFile = new FileInfo(source.DestinationFile.FullName + Path.DirectorySeparatorChar + info.Name),
                 HandlerFactory = GetFileHandler(info)
             };
             
             if (!_onlyShowEditableFiles || node.HandlerFactory != null)
             {
-                current.Children.Add(node);
+                source.Children.Add(node);
             }
         }
     }
 
-    private class Node
+    public class Node
     {
         public bool Expanded = false;
-        public FileSystemInfo File;
+        public FileSystemInfo SourceFile;
+        public FileSystemInfo DestinationFile;
+        public FileSystemInfo LayeredFSFile => DestinationFile.Exists ? DestinationFile : SourceFile;
         public IDataFileEditorFactory HandlerFactory;
 
         public List<Node> Children = new List<Node>();

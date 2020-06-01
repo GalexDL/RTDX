@@ -3,8 +3,8 @@ using System.IO;
 
 public interface IDataFileEditor
 {
-    FileInfo CurrentFile { get; }
-    void Open(FileInfo file);
+    DataFileBrowser.Node CurrentFile { get; }
+    void Open(DataFileBrowser.Node file, bool useSourceFile);
     void DrawGUI();
     void DrawSceneGUI();
     void Close();

@@ -1,0 +1,289 @@
+Initiating legacy licensing module
+
+LICENSE SYSTEM [2020530 20:2:30] Next license update check is after 2020-05-31T17:46:20
+
+LookupAccountName() failed. Error 1332
+
+LICENSE SYSTEM [2020530 20:2:30] Couldn't set permissions of the license file (Win32_AddFileAccessRights).
+
+Built from '2018.4/release' branch; Version is '2018.4.16f1 (e6e9ca02b32a) revision 15133130'; Using compiler version '191326128'
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'en' Physical Memory: 16303 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+[Package Manager] Server::Start -- Port 58679 was selected
+
+ COMMAND LINE ARGUMENTS:
+D:\UnityEditors\2018.4.16f1\Editor\Unity.exe
+-batchmode
+-nographics
+-logfile
+PSMDImport.Import
+-quit
+-logfile
+D:/switch/unity
+Using Asset Import Pipeline V1.
+Initiating legacy licensing module
+Loading GUID <-> Path mappings...0.000098 seconds
+Loading Asset Database...0.018418 seconds
+Build target: OSXUniversal found and added!
+Build target: WindowsStoreApps found and added!
+Build target: Win64 found and added!
+Build target: Win found and added!
+Build target: LinuxUniversal found and added!
+Build target: Linux64 found and added!
+Build target: Linux found and added!
+Build target: iOS found and added!
+Build target: tvOS found and added!
+Build target: PS4 found and added!
+Build target: XboxOne found and added!
+Build target: Android found and added!
+Build target: WebGL found and added!
+Build target: Switch found and added!
+Build target: Lumin found and added!
+Build target: PSM found and added!
+Build target: PSP2 found and added!
+Build target: WiiU found and added!
+Build target: Web found and added!
+Build target: WebStreamed found and added!
+Build target: OSXIntel found and added!
+Build target: OSXIntel64 found and added!
+Build target: BlackBerry found and added!
+Build target: PS3 found and added!
+Build target: N3DS found and added!
+Build target: WP8 found and added!
+Build target: SamsungTV found and added!
+Build target: Tizen found and added!
+AssetDatabase consistency checks...0.024056 seconds
+Refreshing native plugins compatible for Editor in 16.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+DisplayProgressbar: Unity Package Manager
+[Package Manager] Done resolving packages in 0.76s seconds
+[Package Manager] Registering 49 packages:
+[Package Manager]  * Package :  com.unity.ads@2.0.8
+    (location: D:\switch\unity\Library\PackageCache\com.unity.ads@2.0.8)
+[Package Manager]  * Package :  com.unity.analytics@3.2.2
+    (location: D:\switch\unity\Library\PackageCache\com.unity.analytics@3.2.2)
+[Package Manager]  * Package :  com.unity.assetbundlebrowser@1.7.0
+    (location: D:\switch\unity\Library\PackageCache\com.unity.assetbundlebrowser@1.7.0)
+[Package Manager]  * Package :  com.unity.cinemachine@2.5.0
+    (location: D:\switch\unity\Library\PackageCache\com.unity.cinemachine@2.5.0)
+[Package Manager]  * Package :  com.unity.collab-proxy@1.2.15
+    (location: D:\switch\unity\Library\PackageCache\com.unity.collab-proxy@1.2.15)
+[Package Manager]  * Package :  com.unity.formats.fbx@3.0.1-preview.2
+    (location: D:\switch\unity\Library\PackageCache\com.unity.formats.fbx@3.0.1-preview.2)
+[Package Manager]  * Package :  com.unity.package-manager-ui@2.0.8
+    (location: D:\switch\unity\Library\PackageCache\com.unity.package-manager-ui@2.0.8)
+[Package Manager]  * Package :  com.unity.polybrush@1.0.1
+    (location: D:\switch\unity\Library\PackageCache\com.unity.polybrush@1.0.1)
+[Package Manager]  * Package :  com.unity.probuilder@4.2.3
+    (location: D:\switch\unity\Library\PackageCache\com.unity.probuilder@4.2.3)
+[Package Manager]  * Package :  com.unity.purchasing@2.0.3
+    (location: D:\switch\unity\Library\PackageCache\com.unity.purchasing@2.0.3)
+[Package Manager]  * Package :  com.unity.textmeshpro@1.4.1
+    (location: D:\switch\unity\Library\PackageCache\com.unity.textmeshpro@1.4.1)
+[Package Manager]  * Package :  com.unity.modules.ai@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai)
+[Package Manager]  * Package :  com.unity.modules.animation@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation)
+[Package Manager]  * Package :  com.unity.modules.assetbundle@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle)
+[Package Manager]  * Package :  com.unity.modules.audio@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio)
+[Package Manager]  * Package :  com.unity.modules.cloth@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth)
+[Package Manager]  * Package :  com.unity.modules.director@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director)
+[Package Manager]  * Package :  com.unity.modules.imageconversion@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion)
+[Package Manager]  * Package :  com.unity.modules.imgui@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui)
+[Package Manager]  * Package :  com.unity.modules.jsonserialize@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize)
+[Package Manager]  * Package :  com.unity.modules.particlesystem@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem)
+[Package Manager]  * Package :  com.unity.modules.physics@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics)
+[Package Manager]  * Package :  com.unity.modules.physics2d@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d)
+[Package Manager]  * Package :  com.unity.modules.screencapture@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture)
+[Package Manager]  * Package :  com.unity.modules.terrain@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain)
+[Package Manager]  * Package :  com.unity.modules.terrainphysics@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics)
+[Package Manager]  * Package :  com.unity.modules.tilemap@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap)
+[Package Manager]  * Package :  com.unity.modules.ui@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui)
+[Package Manager]  * Package :  com.unity.modules.uielements@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements)
+[Package Manager]  * Package :  com.unity.modules.umbra@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra)
+[Package Manager]  * Package :  com.unity.modules.unityanalytics@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics)
+[Package Manager]  * Package :  com.unity.modules.unitywebrequest@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest)
+[Package Manager]  * Package :  com.unity.modules.unitywebrequestassetbundle@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle)
+[Package Manager]  * Package :  com.unity.modules.unitywebrequestaudio@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio)
+[Package Manager]  * Package :  com.unity.modules.unitywebrequesttexture@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture)
+[Package Manager]  * Package :  com.unity.modules.unitywebrequestwww@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww)
+[Package Manager]  * Package :  com.unity.modules.vehicles@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles)
+[Package Manager]  * Package :  com.unity.modules.video@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video)
+[Package Manager]  * Package :  com.unity.modules.vr@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr)
+[Package Manager]  * Package :  com.unity.modules.wind@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind)
+[Package Manager]  * Package :  com.unity.modules.xr@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr)
+[Package Manager]  * Package :  net.techticks.rtdxtools.core@file:D:\switch\unity\Packages\RTDXTools.Core
+    (location: D:\switch\unity\Packages\RTDXTools.Core)
+[Package Manager]  * Package :  net.techticks.rtdxtools.dependencies.skyeditor@file:D:\switch\unity\Packages\RTDXTools.Dependencies.SkyEditor
+    (location: D:\switch\unity\Packages\RTDXTools.Dependencies.SkyEditor)
+[Package Manager]  * Package :  net.techticks.rtdxtools.psmdimport@file:D:\switch\unity\Packages\RTDXTools.PSMDImport
+    (location: D:\switch\unity\Packages\RTDXTools.PSMDImport)
+[Package Manager]  * Package :  net.techticks.rtdxtools.placementdata@file:D:\switch\unity\Packages\RTDXTools.PlacementData
+    (location: D:\switch\unity\Packages\RTDXTools.PlacementData)
+[Package Manager]  * Package :  com.unity.recorder@2.1.0-preview.1
+    (location: D:\switch\unity\Library\PackageCache\com.unity.recorder@2.1.0-preview.1)
+[Package Manager]  * Package :  com.unity.timeline@1.0.0
+    (location: D:\UnityEditors\2018.4.16f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline)
+[Package Manager]  * Package :  com.autodesk.fbx@3.0.0-preview.1
+    (location: D:\switch\unity\Library\PackageCache\com.autodesk.fbx@3.0.0-preview.1)
+[Package Manager]  * Package :  com.unity.settings-manager@1.0.0
+    (location: D:\switch\unity\Library\PackageCache\com.unity.settings-manager@1.0.0)
+[Package Manager] Done registering packages in 0.00s seconds
+Initialize engine version: 2018.4.16f1 (e6e9ca02b32a)
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+[EnlightenBakeManager] m_Clear = false;
+WARNING: Shader Unsupported: 'Hidden/FrameDebuggerRenderTargetDisplay' - Pass '' has no vertex shader
+Initialize mono
+Mono path[0] = 'D:/UnityEditors/2018.4.16f1/Editor/Data/Managed'
+Mono path[1] = 'D:/UnityEditors/2018.4.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/UnityEditors/2018.4.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56472
+Begin MonoManager ReloadAssembly
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Initializing Unity.PackageManager (PackageManager) v2018.4.16 for Unity v2018.4.16f1
+Registering precompiled unity dll's ...
+Register platform support module: D:\UnityEditors\2018.4.16f1\Editor\Data\PlaybackEngines\windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000720 seconds.
+Registering platform support modules:
+Registered platform support modules in: 0.0795407s.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.92 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.058 seconds
+Registering precompiled user dll's ...
+Registered in 0.059761 seconds.
+Platform modules already initialized, skipping
+Begin MonoManager ReloadAssembly
+Initializing Unity.PackageManager (PackageManager) v2018.4.16 for Unity v2018.4.16f1
+Registering platform support modules:
+Registered platform support modules in: 0.0800964s.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Refreshing native plugins compatible for Editor in 0.82 ms, found 3 plugins.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.826 seconds
+Platform modules already initialized, skipping
+Validating Project structure ... 0.013425 seconds.
+Refresh: detecting if any assets need to be imported or removed ...
+Refreshing native plugins compatible for Editor in 0.83 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Refresh: detecting if any assets need to be imported or removed ...
+Refreshing native plugins compatible for Editor in 0.94 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+
+Refresh Completed time: 0.101716s
+	Asset Scan time: 0.034062s
+	Asset Hashing: 0.000000s [0 B, 0.000000 mb/s]
+	Asset Import (Scripting) time: 0.000000s (count: 0)
+	Post Processs Assets (Scripting) time: 0.000000s
+	Asset Rehashing: 0.000000s [0 B, 0.000000 mb/s]
+	Asset Import (Non Scripting) time: 0.000000s (count: 0)
+	Post Process Assets (Non Scripting) time: 0.000000s
+	Dependent Assets to Import Queue time: 0.000000s
+
+WARNING: Shader Unsupported: 'Hidden/FrameDebuggerRenderTargetDisplay' - Pass '' has no vertex shader
+Warming cache for 4550 main assets: 0.007862 seconds elapsed
+Initializing Unity extensions:
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/Timeline/Runtime/UnityEngine.Timeline.dll'  GUID: 6a10b2909283487f913b00d94cd3faf5
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/TestRunner/portable/nunit.framework.dll'  GUID: 405b9b51bb344a128608d968297df79c
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/GUISystem/Standalone/UnityEngine.UI.dll'  GUID: f70555f144d8491a825f0804e09c671c
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'  GUID: f5f67c52d1564df4a8936ccd202a3bd8
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll'  GUID: 844f815391db42d49455cbf1a7bfc434
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/Networking/Standalone/UnityEngine.Networking.dll'  GUID: dc443db3e92b4983b9738c1131f555cb
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Runtime/UnityEngine.SpatialTracking.dll'  GUID: ed7343f30e3843b3afda8f8b02669cea
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll'  GUID: 4a3ecb1425d14502837abea459cf2b70
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll'  GUID: 5f32cd94baa94578a686d4b9d6b660f7
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll'  GUID: b5da970776034f77a070d99423d68791
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'  GUID: 870353891bb340e2b2a9c8707e7419ba
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll'  GUID: 53ebcfaa2e1e4e2dbc85882cd5a73fa1
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll'  GUID: ead147da21254ff9a0a936bdd75e1680
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Runtime/UnityEngine.GoogleAudioSpatializer.dll'  GUID: e4f4cf1b9b434137a499903a7a1d651a
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll'  GUID: 4ba2329b63d54f0187bcaa12486b1b0f
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll'  GUID: 3a84de5cd0624681b6b6dcd8921d912a
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll'  GUID: 80a3616ca19596e4da0f10f14d241e9f
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll'  GUID: 4113173d5e95493ab8765d7b08371de4
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll'  GUID: 4b3fa4bde7f1451a8218c03ee6a8ded8
+ 'D:/UnityEditors/2018.4.16f1/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll'  GUID: 7668179ede524d6396c8b7d84461ea29
+Unloading 3056 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 208.3 MB.
+System memory in use after: 207.1 MB.
+
+Unloading 571 unused Assets to reduce memory usage. Loaded Objects now: 3701.
+Total: 5.081100 ms (FindLiveObjects: 0.508700 ms CreateObjectMapping: 0.117400 ms MarkObjects: 2.939600 ms  DeleteObjects: 1.514500 ms)
+
+Batchmode quit successfully invoked - shutting down!
+[Performance] CurlRequestCheck                        :       13 samples, Peak.  32.6 us (2.3x), Avg.  14.1 us, Total. 183.5 us (0.0%)
+[Performance] PackageManager::RunRequestSynchronously :       14 samples, Peak.  33.4 us (2.7x), Avg.  12.1 us, Total. 170.1 us (0.0%)
+Refresh: detecting if any assets need to be imported or removed ...
+Refreshing native plugins compatible for Editor in 10.22 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+
+Refresh Completed time: 0.114324s
+	Asset Scan time: 0.035827s
+	Asset Hashing: 0.000000s [0 B, 0.000000 mb/s]
+	Asset Import (Scripting) time: 0.000000s (count: 0)
+	Post Processs Assets (Scripting) time: 0.000000s
+	Asset Rehashing: 0.000000s [0 B, 0.000000 mb/s]
+	Asset Import (Non Scripting) time: 0.000000s (count: 0)
+	Post Process Assets (Non Scripting) time: 0.000000s
+	Dependent Assets to Import Queue time: 0.000000s
+
+Refresh: detecting if any assets need to be imported or removed ...
+Refreshing native plugins compatible for Editor in 0.88 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+
+Refresh Completed time: 0.102222s
+	Asset Scan time: 0.033672s
+	Asset Hashing: 0.000000s [0 B, 0.000000 mb/s]
+	Asset Import (Scripting) time: 0.000000s (count: 0)
+	Post Processs Assets (Scripting) time: 0.000000s
+	Asset Rehashing: 0.000000s [0 B, 0.000000 mb/s]
+	Asset Import (Non Scripting) time: 0.000000s (count: 0)
+	Post Process Assets (Non Scripting) time: 0.000000s
+	Dependent Assets to Import Queue time: 0.000000s
+
+[Package Manager] Server::Kill -- Server was shutdown
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

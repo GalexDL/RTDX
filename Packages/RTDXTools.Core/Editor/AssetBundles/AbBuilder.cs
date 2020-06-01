@@ -18,13 +18,14 @@ public class AbBuilder : EditorWindow
         "shader_pack"
     };
 
-    private string _buildPath = "";
     private List<string> _bundleNames = new List<string>();
     private bool _alsoBuildNca = false;
-    private bool _expanded = false;
+    private bool _forceRebuild = false;
     private bool _skipPostprocess;
     
     private string _buildInfo = "";
+    private bool _expanded = false;
+    private Vector2 _scrollPos;
 
     [MenuItem("Tools/AbBuilder", false, 0)]
     static void Init()
@@ -34,85 +35,49 @@ public class AbBuilder : EditorWindow
 
     private void OnEnable()
     {
-        _buildPath = EditorPrefs.GetString("romfsabpath", "");
         _bundleNames = EditorPrefs.GetString("bundlename", "").Split(',').ToList();
         _alsoBuildNca = EditorPrefs.GetBool("alsoBuildNCA", false);
+        _forceRebuild = EditorPrefs.GetBool("forceRebuild", false);
     }
 
     private void OnGUI()
     {
         EditorGUI.BeginChangeCheck();
-        _buildPath = EditorGUILayout.TextField("Build Path with / (e.g. StreamingAssets/ab/)", _buildPath);
 
         _expanded = EditorGUILayout.Foldout(_expanded, "Bundles");
         if (_expanded)
         {
-            EditorGUI.indentLevel++;
-            foreach (var abName in AssetDatabase.GetAllAssetBundleNames().Where(n => !CopyBlacklist.Contains(n.ToLower())))
+            using (var scrollView = new EditorGUILayout.ScrollViewScope(_scrollPos))
             {
-                bool inList = _bundleNames.Contains(abName);
-                bool enabled = EditorGUILayout.ToggleLeft(abName, inList);
-                if (enabled && !inList)
+                _scrollPos = scrollView.scrollPosition;
+                
+                EditorGUI.indentLevel++;
+                foreach (var abName in AssetDatabase.GetAllAssetBundleNames()
+                    .Where(n => !CopyBlacklist.Contains(n.ToLower())))
                 {
-                    _bundleNames.Add(abName);
+                    bool inList = _bundleNames.Contains(abName);
+                    bool enabled = EditorGUILayout.ToggleLeft(abName, inList);
+                    if (enabled && !inList)
+                    {
+                        _bundleNames.Add(abName);
+                    }
+                    else if (!enabled && inList)
+                    {
+                        _bundleNames.Remove(abName);
+                    }
                 }
-                else if (!enabled && inList)
-                {
-                    _bundleNames.Remove(abName);
-                }
-            }
 
-            EditorGUI.indentLevel--;
+                EditorGUI.indentLevel--;
+            }
         }
         EditorGUILayout.Space();
-        
-
-        if (EditorGUI.EndChangeCheck())
-        {
-            EditorPrefs.SetString("romfsabpath", _buildPath);
-            EditorPrefs.SetString("bundlename", string.Join(",", _bundleNames.ToArray()));
-            EditorPrefs.SetBool("alsoBuildNCA", _alsoBuildNca);
-
-        }
 
         if (GUILayout.Button("Build"))
         {
-            string path = Path.Combine(Directory.GetCurrentDirectory(), TempPath);
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            Build(_bundleNames, _forceRebuild, !_skipPostprocess);
             
-            EditorUtility.DisplayProgressBar("Building AssetBundles...", "", 0f);
+            _buildInfo = "Finished at " + DateTime.Now.ToShortTimeString();
 
-            BuildPipeline.BuildAssetBundles(TempPath, BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.ForceRebuildAssetBundle,
-                BuildTarget.StandaloneWindows);
-
-            foreach (var bundleName in _bundleNames)
-            {
-                string fileName = Path.Combine(Directory.GetCurrentDirectory() + "/", TempPath, bundleName);
-                if (!File.Exists(fileName))
-                {
-                    Debug.LogWarning(fileName + " does not exist.");
-                    continue;
-                }
-
-                if (!_skipPostprocess)
-                {
-                    EditorUtility.DisplayProgressBar("PostProcessing...", "", 0.7f);
-                    new BuildPostprocessor(fileName).Run();
-                }
-
-                EditorUtility.DisplayProgressBar("Copying...", "", 0.9f);
-
-                string destFile = _buildPath + bundleName + ".ab";
-                File.Copy(fileName, destFile, true);
-                Debug.Log("Saved to " + _buildPath);
-                
-                _buildInfo = "Finished at " + DateTime.Now.ToShortTimeString();
-            } 
-            EditorUtility.ClearProgressBar();
-            
             if (_alsoBuildNca)
             {
                 GetWindow<RomTools>().BuildNCA();
@@ -121,8 +86,59 @@ public class AbBuilder : EditorWindow
         
         _alsoBuildNca = EditorGUILayout.ToggleLeft("Also Build NCA", _alsoBuildNca);
         _skipPostprocess = EditorGUILayout.ToggleLeft("Skip Postprocessing", _skipPostprocess);
+        _forceRebuild = EditorGUILayout.ToggleLeft("Force Rebuild", _forceRebuild);
+        
+        if (EditorGUI.EndChangeCheck())
+        {
+            EditorPrefs.SetString("bundlename", string.Join(",", _bundleNames.ToArray()));
+            EditorPrefs.SetBool("alsoBuildNCA", _alsoBuildNca);
+            EditorPrefs.SetBool("forceRebuild", _forceRebuild);
+        }
 
         GUILayout.Label(_buildInfo);
+        GUILayout.Space(10f);
+    }
 
+    public static void Build(IEnumerable<string> bundleNames, bool forceRebuild = false, bool postProcess = true)
+    {
+        string path = Path.Combine(Directory.GetCurrentDirectory(), TempPath);
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+            
+        EditorUtility.DisplayProgressBar("Building AssetBundles...", "", 0f);
+
+        var options = BuildAssetBundleOptions.UncompressedAssetBundle;
+        if (forceRebuild)
+        {
+            options |= BuildAssetBundleOptions.ForceRebuildAssetBundle;
+        }
+        BuildPipeline.BuildAssetBundles(TempPath, options, BuildTarget.StandaloneWindows);
+
+        foreach (var bundleName in bundleNames)
+        {
+            string fileName = Path.Combine(Directory.GetCurrentDirectory(), TempPath, bundleName);
+            if (!File.Exists(fileName))
+            {
+                Debug.LogWarning(fileName + " does not exist.");
+                continue;
+            }
+
+            if (postProcess)
+            {
+                EditorUtility.DisplayProgressBar("PostProcessing...", "", 0.7f);
+                new BuildPostprocessor(fileName).Run();
+            }
+
+            EditorUtility.DisplayProgressBar("Copying...", "", 0.9f);
+
+            string buildPath = ConfigManager.AssetBundleBuildPath;
+            string destFile = Path.Combine(buildPath, $"{bundleName}.ab");
+            File.Copy(fileName, destFile, true);
+            Debug.Log($"Saved to {buildPath}");
+                
+        } 
+        EditorUtility.ClearProgressBar();
     }
 }

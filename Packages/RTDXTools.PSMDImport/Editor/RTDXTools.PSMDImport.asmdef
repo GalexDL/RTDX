@@ -1,7 +1,8 @@
 {
     "name": "RTDXTools.Editor.PSMDImport",
     "references": [
-        "RTDXTools.Common"
+        "RTDXTools.Dependencies.SkyEditor",
+        "RTDXTools.Core.Editor"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [

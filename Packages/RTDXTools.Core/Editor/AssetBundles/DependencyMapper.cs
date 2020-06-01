@@ -128,7 +128,7 @@ public class DependencyMapper : EditorWindow
             EditorUtility.DisplayProgressBar("DependencyMapper", "Loading...", 0.0f);
             _srcAb = Helpers.GetAssetBundle(Directory.GetCurrentDirectory() + "/" + AbBuilder.TempPath, _srcAbName);
             EditorUtility.DisplayProgressBar("DependencyMapper", "Loading...", 0.25f);
-            _dstAb = Helpers.GetAssetBundle(EditorHelpers.GetRomFsAssetBundlePath(), _dstAbName);
+            _dstAb = Helpers.GetAssetBundle(ConfigManager.AssetBundleSourcePath, _dstAbName);
 
             if (_srcAb != null && _dstAb != null)
             {

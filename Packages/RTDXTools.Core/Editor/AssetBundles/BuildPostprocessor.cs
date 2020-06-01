@@ -86,13 +86,13 @@ public class BuildPostprocessor
             while (s.BaseStream.Position < s.BaseStream.Length - 8)
             {
                 long ourPathId = s.ReadInt64();
-                s.BaseStream.Position -= 6;
+                s.BaseStream.Position -= 7;
 
                 if (dependencyMap.ContainsKey(ourPathId))
                 {
                     long origPathId = dependencyMap[ourPathId];
                     var wr = new BinaryWriter(memStream);
-                    wr.Seek((int) wr.BaseStream.Position - 2, SeekOrigin.Begin);
+                    wr.Seek((int) wr.BaseStream.Position - 1, SeekOrigin.Begin);
                     wr.Write(origPathId);
                     wr.Flush();
                     
@@ -102,24 +102,6 @@ public class BuildPostprocessor
         }
         
         Debug.Log($"Replaced {count} dependency path IDs.");
-    }
-
-    private void ExtractBundle()
-    {
-        string batchFilePath = _bundlePath + ".batch";
-        
-        // Batch file for UABE
-        File.WriteAllText(batchFilePath, "+FILE " + _bundlePath);
-        
-        var extractProcess = new Process(); 
-        extractProcess.StartInfo = new ProcessStartInfo
-        {
-            FileName = Directory.GetCurrentDirectory() + "/" + ExtractorPath,
-            Arguments = "-fd batchexport " + batchFilePath,
-            UseShellExecute = true,
-        };
-        extractProcess.Start();
-        extractProcess.WaitForExit();
     }
     
     #endif

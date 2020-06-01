@@ -1,18 +1,26 @@
 using System;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
 public static class ImportHelpers
 {
-    public static void GeneratePrefabForModel(string modelPath, string prefabPath)
+    public static void GeneratePrefabForModel(string modelPath, string prefabPath, string meshesOutputFolder = null)
     {
         var prefab = GameObject.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(modelPath.ToAssetPath()));
         var rigRoot = prefab.transform.Find("root/PG_root");
+        rigRoot.transform.parent = prefab.transform;
 
         var skinnedMeshRenderers = prefab.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (var meshRenderer in skinnedMeshRenderers)
         {
             meshRenderer.rootBone = rigRoot;
+
+            if (meshesOutputFolder != null)
+            {
+                meshRenderer.sharedMesh = Helpers.CreateVertexPaintedClone(meshRenderer.sharedMesh, Color.black, 
+                    Path.Combine(meshesOutputFolder, $"{meshRenderer.sharedMesh.name}_Painted.asset"));
+            }
         }
 
         PrefabUtility.SaveAsPrefabAsset(prefab, prefabPath);

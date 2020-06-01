@@ -1,7 +1,8 @@
 {
     "name": "RTDXTools.Editor.PlacementData",
     "references": [
-        "RTDXTools.Common"
+        "RTDXTools.Core.Editor",
+        "RTDXTools.PlacementData.Runtime"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [

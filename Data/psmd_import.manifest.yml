@@ -1,0 +1,12 @@
+psmdPkGraphicPath: D:\3ds\pk_graphic
+
+models:
+- targetName: fokko_00
+  graphicsDatabaseSlot: 801
+  psmdModel: fokko_10.bch
+  rtdxAnimation: 4leg_fokko_00
+
+- targetName: zoroa_00
+  graphicsDatabaseSlot: 699
+  psmdModel: zoroa_00.bch
+  rtdxAnimation: 4leg_beast_00

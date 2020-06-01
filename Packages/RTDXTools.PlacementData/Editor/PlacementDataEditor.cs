@@ -11,24 +11,26 @@ using UnityEngine;
 public class PlacementDataEditor : IDataFileEditor
 {
     private Vector2 _scrollPos;
-    
-    private FileInfo _file;
+
+    private bool _useSourceFile;
+    private DataFileBrowser.Node _file;
     private bool _showGizmos;
     private bool _showAreaGizmos;
     private readonly List<PlacementDataEntry> _entries = new List<PlacementDataEntry>();
     private GUIStyle _sceneLabelStyle;
 
-    public FileInfo CurrentFile => _file;
+    public DataFileBrowser.Node CurrentFile => _file;
 
-    public void Open(FileInfo file)
+    public void Open(DataFileBrowser.Node file, bool useSourceFile)
     {
         EditorUtility.DisplayProgressBar("PlacementDataEditor", "Parsing...", 0f);
         
         _file = file;
+        _useSourceFile = useSourceFile;
         _showGizmos = EditorPrefs.GetBool($"{nameof(PlacementDataEditor)}_showGizmos", true);
         _showAreaGizmos = EditorPrefs.GetBool($"{nameof(PlacementDataEditor)}_showAreaGizmos", true);
 
-        var lines = File.ReadAllLines(_file.FullName);
+        var lines = File.ReadAllLines(useSourceFile ? _file.SourceFile.FullName : _file.LayeredFSFile.FullName);
         foreach (var line in lines)
         {
             if (!line.Contains("{"))
@@ -97,13 +99,13 @@ public class PlacementDataEditor : IDataFileEditor
             sb.AppendLine($"{fullIdentifier}:{dataString}");
         }
 
-        var fileName = _file.FullName;
-        if (_file.Exists)
+        var fileName = _file.DestinationFile.FullName;
+        if (_file.DestinationFile.Exists)
         {
-            _file.CopyTo(fileName + ".bak", true);
+           ((FileInfo) _file.DestinationFile).CopyTo(fileName + ".bak", true);
         }
 
-        File.WriteAllText(_file.FullName, sb.ToString());
+        File.WriteAllText(_file.DestinationFile.FullName, sb.ToString());
         Debug.Log("Saved to " + fileName);
     }
 
@@ -120,7 +122,7 @@ public class PlacementDataEditor : IDataFileEditor
 
     public void DrawGUI()
     {
-        EditorGUILayout.LabelField($"Editing {_file.FullName}");
+        EditorGUILayout.LabelField($"Editing {(_useSourceFile ? _file.SourceFile.FullName : _file.LayeredFSFile.FullName)}");
 
         if (GUILayout.Button("Save"))
         {
@@ -292,7 +294,6 @@ public class PlacementDataEditor : IDataFileEditor
             if (chara == null)
                 return;
 
-            string romfsPath = EditorHelpers.GetRomFsPath();
             string name = chara.Name;
             
             // TODO: Allow to switch preview hero and partner
@@ -308,13 +309,13 @@ public class PlacementDataEditor : IDataFileEditor
             // Purple Kecleon needs special treatment
             string assetBundleNameWithoutExtension = name == "KAKUREON2" ? "kakureon_11" : $"{name.ToLower()}_10";
             string assetBundleName = assetBundleNameWithoutExtension + ".ab";
-            string basePath = $"{romfsPath}/Data/StreamingAssets/ab/";
-            if (!File.Exists(basePath + assetBundleName))
+            string assetBundlePath = Path.Combine(ConfigManager.AssetBundleSourcePath, assetBundleName);
+            if (!File.Exists(assetBundlePath))
             {
-                Debug.LogWarning($"Could not load preview model for character '{chara.Name}' (searched at {basePath}{assetBundleName}).");
+                Debug.LogWarning($"Could not load preview model for character '{chara.Name}' (searched at {assetBundleName}).");
             }
 
-            var assetBundle = Helpers.GetAssetBundle(basePath, assetBundleName);
+            var assetBundle = Helpers.GetAssetBundle(ConfigManager.AssetBundleSourcePath, assetBundleName);
 
             try
             {
