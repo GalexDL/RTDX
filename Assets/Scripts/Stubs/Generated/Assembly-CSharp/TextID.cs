@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Const;
+using SLua;
 
 // Image 46: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null - Types 4339-9572
 
@@ -34,7 +35,40 @@ public class TextId // TypeDefIndex: 5584
 	public static int LabelToHash(string label) => default; // 0x00922F20-0x00922FB0
 }
 
-public class TextID
+[CustomLuaClass] // 0x00608C50-0x00608C60
+public class TextID // TypeDefIndex: 4545
 {
-	
+	// Fields
+	public static TextMode Mode; // 0x00
+	public TextId textId; // 0x10
+	public string editLogMark; // 0x18
+	public string rawText; // 0x20
+
+	// Nested types
+	public enum TextMode // TypeDefIndex: 4546
+	{
+		EditorMode = 0,
+		RomMode = 1
+	}
+
+	private enum CastIndex // TypeDefIndex: 4547
+	{
+		CAST_NONE = 0,
+		INDEX_HERO = 1,
+		INDEX_PARTNER = 2,
+		INDEX_PLAYER = 3,
+		INDEX_IRAI1 = 4,
+		INDEX_IRAI2 = 5
+	}
+
+	// Constructors
+	public TextID() {} // Dummy constructor
+	public TextID(string gmmId_, string editLogMark_, string rawText_) {} // 0x00921CE0-0x00921DC0
+	public TextID(TextId textId) {} // 0x00921DC0-0x00921E80
+	static TextID() {} // 0x00922740-0x009227A0
+
+	// Methods
+	private int GmmIdToHash_(string gmmId) => default; // 0x00921BC0-0x00921CE0
+	public string GetMessage() => default; // 0x00921E80-0x00922130
+	private string editorTextModify_(string text) => default; // 0x00922130-0x009226D0
 }

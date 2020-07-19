@@ -15,6 +15,7 @@
             "."
         ],
         "fbxSavePaths": [
+            "GameAssets/Models/scorbunn_00",
             "."
         ],
         "selectedFbxPath": 0,
@@ -25,15 +26,15 @@
             "exportFormat": 0,
             "animatedSkinnedMesh": true,
             "mayaCompatibleNaming": true,
-            "include": 2,
+            "include": 0,
             "lodLevel": 0,
             "objectPosition": 0,
             "exportUnrendered": true
         },
         "convertToPrefabSettingsSerialize": {
             "exportFormat": 0,
-            "animatedSkinnedMesh": false,
-            "mayaCompatibleNaming": true
+            "animatedSkinnedMesh": true,
+            "mayaCompatibleNaming": false
         }
     }
 }

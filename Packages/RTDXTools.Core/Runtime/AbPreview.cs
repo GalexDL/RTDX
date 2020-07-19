@@ -196,11 +196,19 @@ public class AbPreview : MonoBehaviour
     }
     
     [ContextMenu("Get TextAsset bytes")]
-    void GetTextAssetText()
+    void GetTextAssetBytes()
     {
         var text = ((TextAsset) AssetRefs[SelectedIndex]).bytes;
         Debug.Log(text);
         Helpers.SetClipboard(ByteArrayToString(text));
+    }
+    
+    [ContextMenu("Get TextAsset text")]
+    void GetTextAssetText()
+    {
+        var text = ((TextAsset) AssetRefs[SelectedIndex]).text;
+        Debug.Log(text);
+        Helpers.SetClipboard(text);
     }
 
     void FixShader(Material mat)
@@ -217,6 +225,19 @@ public class AbPreview : MonoBehaviour
             }*/
         }
     }
+    
+    [ContextMenu("Get Anim Curve Bindings")]
+    void GetAnimCurveBindings()
+    {
+        var animation = AssetRefs[SelectedIndex] as AnimationClip;
+        if (animation == null)
+            return;
+
+        var curves = AnimationUtility.GetCurveBindings(animation);
+        var referenceCurves = AnimationUtility.GetObjectReferenceCurveBindings(animation);
+        var allCurves = AnimationUtility.GetAllCurves(animation);
+    }
+
 
     [ContextMenu("PlayAnimation")]
     void PlayAnimation()

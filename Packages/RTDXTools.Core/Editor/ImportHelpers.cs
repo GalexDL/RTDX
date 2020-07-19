@@ -5,26 +5,50 @@ using UnityEngine;
 
 public static class ImportHelpers
 {
+    public static string CreateDirectoryForImport(string modelTargetName)
+    {
+        string targetDir = Path.Combine("Assets", "GameAssets", "Models", modelTargetName);
+        EnsureDirectoryExists(targetDir);
+        return targetDir;
+    }
+    
+    public static void EnsureDirectoryExists(string path)
+    {
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+    }
+    
     public static void GeneratePrefabForModel(string modelPath, string prefabPath, string meshesOutputFolder = null)
     {
-        var prefab = GameObject.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(modelPath.ToAssetPath()));
-        var rigRoot = prefab.transform.Find("root/PG_root");
-        rigRoot.transform.parent = prefab.transform;
+        var model = GameObject.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(modelPath.ToAssetPath()));
+        GeneratePrefabForModel(model, prefabPath, meshesOutputFolder);
+        GameObject.DestroyImmediate(model);
+    }
+    
+    public static void GeneratePrefabForModel(GameObject model, string prefabPath, string meshesOutputFolder = null)
+    {
+        var rigRoot = model.transform.Find("root/PG_root");
+        if (rigRoot != null)
+        {
+            rigRoot.transform.parent = model.transform;
+        }
 
-        var skinnedMeshRenderers = prefab.GetComponentsInChildren<SkinnedMeshRenderer>();
+        var skinnedMeshRenderers = model.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (var meshRenderer in skinnedMeshRenderers)
         {
             meshRenderer.rootBone = rigRoot;
 
             if (meshesOutputFolder != null)
             {
-                meshRenderer.sharedMesh = Helpers.CreateVertexPaintedClone(meshRenderer.sharedMesh, Color.black, 
+                EnsureDirectoryExists(meshesOutputFolder);
+                meshRenderer.sharedMesh = Helpers.CreateVertexPaintedClone(meshRenderer.sharedMesh, Helpers.DefaultVertexColor, 
                     Path.Combine(meshesOutputFolder, $"{meshRenderer.sharedMesh.name}_Painted.asset"));
             }
         }
 
-        PrefabUtility.SaveAsPrefabAsset(prefab, prefabPath);
-        GameObject.DestroyImmediate(prefab);
+        PrefabUtility.SaveAsPrefabAsset(model, prefabPath);
     }
 
     /// <summary>
@@ -34,6 +58,15 @@ public static class ImportHelpers
     public static Material CreateCharacterMaterial(CharacterMaterialType materialType)
     {
         var material = new Material(Shader.Find("Pegasus/CH/CH_Base"));
+        ApplyDefaultMaterialProperties(material, materialType);
+
+        return material;
+    }
+
+    public static void ApplyDefaultMaterialProperties(Material material, CharacterMaterialType materialType)
+    {
+        material.shader = Shader.Find("Pegasus/CH/CH_Base");
+        material.DisableKeyword("_MATERIALTYPE_BODY");
         material.EnableKeyword($"_MATERIALTYPE_{materialType.ToKeywordString()}");
         material.SetInt("_MaterialType", (int) materialType);
         
@@ -49,10 +82,8 @@ public static class ImportHelpers
         material.SetTexture("_MatCap", TextureHelpers.GetDefaultTexture("CH_LightMap"));
         material.SetTexture("_Kamishitu", TextureHelpers.GetDefaultTexture("Gayousi_loop"));
         material.SetTexture("_HSVMaskTex", TextureHelpers.GetDefaultTexture("HSVMaskTex"));
-
-        return material;
     }
-
+    
     public static CharacterMaterialType GuessCharacterMaterialType(string materialName)
     {
         materialName = materialName.ToLower();
@@ -73,11 +104,11 @@ public static class ImportHelpers
         switch (materialType)
         {
             case CharacterMaterialType.Eyes:
-                return "eye";
+                return "EYE";
             case CharacterMaterialType.Mouth:
-                return "mouth"; 
+                return "MOUTH"; 
             default:
-                return "body";
+                return "BODY";
         }
     }
 }

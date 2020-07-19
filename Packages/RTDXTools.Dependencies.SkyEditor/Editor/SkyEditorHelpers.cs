@@ -4,9 +4,9 @@ using SkyEditor.RomEditor.Rtdx.Domain.Automation;
 
 public static class SkyEditorHelpers
 {
-    public static RtdxRom GetRom()
+    public static RtdxRom GetRom(bool useBuiltRom = false)
     {
-        return new RtdxRom(ConfigManager.SourceDir, PhysicalFileSystem.Instance);
+        return new RtdxRom(useBuiltRom ? ConfigManager.BuildDir : ConfigManager.SourceDir, PhysicalFileSystem.Instance);
     }
     
     public static void SaveRom(RtdxRom rom)

@@ -102,7 +102,7 @@ public class LuaWINDOW // TypeDefIndex: 4552
 	public static IEnumerator DrawFaceOffset(int x, int y) => default; // 0x00BFFA60-0x00BFFAE0
 	public static void RemoveFace() {} // 0x00BFFB10-0x00BFFC10
 	public static void NextNameOff() {} // 0x00BFFC10-0x00BFFC80
-	[IEnumeratorCoroutineYield] // 0x00619950-0x006199D0
+	[IEnumeratorCoroutineYield] // 0x0061talk9950-0x006199D0
 	// [IteratorStateMachine] // 0x00619950-0x006199D0
 	public static IEnumerator CloseMessage() => default; // 0x00BFFC80-0x00BFFCE0
 	public static void ForceCloseMessage() {} // 0x00BFFD10-0x00BFFD80

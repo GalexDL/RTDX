@@ -17,7 +17,7 @@ public class ManpuModel : NormalModel // TypeDefIndex: 6040
 	private Vector3 worldOffset_; // 0x210
 	private Transform attachRoot_; // 0x220
 	private NormalModel attachModel_; // 0x228
-	private CharacterModel attachCharaModel_; // 0x230
+		private CharacterModel attachCharaModel_; // 0x230
 	private bool bPrevAutoCamera_; // 0x238
 
 	// Constructors

@@ -15,7 +15,7 @@ public class GraphicsDatabaseViewerWindow : EditorWindow
 
     private void OnEnable()
     {
-        _rom = SkyEditorHelpers.GetRom();
+        _rom = SkyEditorHelpers.GetRom(true);
     }
 
     private void OnGUI()

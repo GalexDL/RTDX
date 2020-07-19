@@ -12,8 +12,10 @@ using UnityEngine.AI;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 
-public class Helpers
+public static class Helpers
 {
+    public static readonly Color DefaultVertexColor = new Color(0.447f, 0.651f, 0.651f);
+    
     #if UNITY_EDITOR
     [MenuItem("Tools/JSONClone")]
     public static void JsonCloneFromSelection()
@@ -168,6 +170,9 @@ public class Helpers
         }
     }
     
+    [MenuItem("Tools/Vertex Paint/Default in-game color (#72A6A6)")]
+    public static void VertexPaintDefault() => VertexPaint(DefaultVertexColor, "black");
+    
     [MenuItem("Tools/Vertex Paint/Black")]
     public static void VertexPaintBlack() => VertexPaint(Color.black, "black");
     
@@ -318,6 +323,34 @@ public class Helpers
                 }
             }
         }
+    }
+    
+    public static Transform FindDeepChild(this Transform parent, string name)
+    {
+        Queue<Transform> queue = new Queue<Transform>();
+        queue.Enqueue(parent);
+        while (queue.Count > 0)
+        {
+            var c = queue.Dequeue();
+            if (c.name == name)
+                return c;
+            foreach(Transform t in c)
+                queue.Enqueue(t);
+        }
+        return null;
+    }    
+    
+    public static Transform FindDeepChildDepthFirst(this Transform parent, string name)
+    {
+        foreach(Transform child in parent)
+        {
+            if(child.name == name)
+                return child;
+            var result = child.FindDeepChildDepthFirst(name);
+            if (result != null)
+                return result;
+        }
+        return null;
     }
     #endif
 }

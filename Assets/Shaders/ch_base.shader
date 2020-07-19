@@ -38,11 +38,14 @@
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
         #pragma surface surf Standard fullforwardshadows
+        #pragma multi_compile __ _MATERIALTYPE_EYE _MATERIALTYPE_MOUTH _MATERIALTYPE_BODY
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
 
         sampler2D _MainTex;
+        float4 _MainTex_eye_ST;
+        float4 _MainTex_mouth_ST;
         float _PreviewVertexColors;
 
         struct Input
@@ -60,7 +63,17 @@
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            float4 c = tex2D (_MainTex, IN.uv_MainTex);
+            float2 texCoordExtraOffset = float2(0, 0);
+            
+            #if _MATERIALTYPE_EYE
+            texCoordExtraOffset = _MainTex_eye_ST.zw;
+            #endif
+            
+            #if _MATERIALTYPE_MOUTH
+            texCoordExtraOffset = _MainTex_mouth_ST.zw;
+            #endif
+            
+            float4 c = tex2D (_MainTex, IN.uv_MainTex + texCoordExtraOffset);
             c = lerp(c, IN.vertColor, saturate(_PreviewVertexColors));
             o.Albedo = c.rgb;
             o.Alpha = c.a;

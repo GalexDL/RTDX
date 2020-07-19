@@ -47,14 +47,14 @@ namespace kamina
 		public class ModelResourceInfo // TypeDefIndex: 8368
 		{
 			// Fields
-			private List<ModelInfo> aModelInfo_; // 0x10
-			private List<AnimationInfo> aAnimationInfo_; // 0x18
+			private List<ModelInfo> aModelInfo_ = new List<ModelInfo>(); // 0x10
+			private List<AnimationInfo> aAnimationInfo_ = new List<AnimationInfo>(); // 0x18
 			private bool bClearTarget_; // 0x20
 	
 			// Properties
 			public bool ClearTarget { get => default; } // 0x00B7FC80-0x00B7FC90 
-			public List<ModelInfo> ModelInfoList { get => default; } // 0x00B82740-0x00B82750 
-			public List<AnimationInfo> AnimationInfoList { get => default; } // 0x00B82750-0x00B829C0 
+			public List<ModelInfo> ModelInfoList { get => aModelInfo_; } // 0x00B82740-0x00B82750 
+			public List<AnimationInfo> AnimationInfoList { get => aAnimationInfo_; } // 0x00B82750-0x00B829C0 
 	
 			// Nested types
 			public struct ModelInfo // TypeDefIndex: 8369
@@ -64,7 +64,7 @@ namespace kamina
 	
 				// Constructors
 				public ModelInfo(string _file) {
-					file = default;
+					file = _file;
 				} // 0x00B82A60-0x00B82A70
 			}
 	
@@ -79,11 +79,11 @@ namespace kamina
 	
 				// Constructors
 				public AnimationInfo(string _symbol, string _skeletal, string _material) {
-					symbol = default;
+					symbol = _symbol;
 					partsSymbol = default;
 					key = default;
-					skeletal = default;
-					material = default;
+					skeletal = _skeletal;
+					material = _material;
 				} // 0x00B829C0-0x00B82A60
 			}
 	

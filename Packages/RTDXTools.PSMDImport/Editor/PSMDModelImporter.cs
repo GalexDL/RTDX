@@ -40,14 +40,12 @@ public class PSMDModelImporter
         string path = Path.Combine(_manifest.PsmdPkGraphicPath, modelManifest.PsmdModel);
         var spicaHandle = H3D.Open(File.ReadAllBytes(path));
 
-        string targetDir = Path.Combine("Assets", "GameAssets", "Models", modelManifest.TargetName);
+        string targetDir = ImportHelpers.CreateDirectoryForImport(modelManifest.TargetName);
         string targetTexturesDir = Path.Combine(targetDir, "Textures");
         string targetMaterialsDir = Path.Combine(targetDir, "Materials");
         string targetMeshesDir = Path.Combine(targetDir, "Meshes");
-        EnsureDirectoryExists(targetDir);
-        EnsureDirectoryExists(targetTexturesDir);
-        EnsureDirectoryExists(targetMaterialsDir);
-        EnsureDirectoryExists(targetMeshesDir);
+        ImportHelpers.EnsureDirectoryExists(targetTexturesDir);
+        ImportHelpers.EnsureDirectoryExists(targetMaterialsDir);
         
         string modelPath = Path.Combine(targetDir, $"{modelManifest.TargetName}.dae");
         new DAE(spicaHandle, 0).Save(modelPath);
@@ -98,13 +96,4 @@ public class PSMDModelImporter
         return material;
     }
 
-
-    private void EnsureDirectoryExists(string path)
-    {
-        if (!Directory.Exists(path))
-        {
-            Directory.CreateDirectory(path);
-        }
-    }
-    
 }
