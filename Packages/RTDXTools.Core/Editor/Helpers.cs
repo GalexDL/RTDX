@@ -246,6 +246,16 @@ public static class Helpers
 
         dstMesh.uv = dstMeshUvs;
     }
+
+    [MenuItem("Tools/Fix AnimationClip Quaternion interpolation")]
+    public static void FixAnimationClipQuaternionInterpolation()
+    {
+        foreach (var clip in Selection.objects.OfType<AnimationClip>())
+        {
+            clip.EnsureQuaternionContinuity();
+            EditorUtility.SetDirty(clip);
+        }
+    }
     
     public static void VertexPaint(Color color, string colorName)
     {

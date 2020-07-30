@@ -43,7 +43,7 @@ public static class TextureAnimationImporter
         foreach (var animationClip in animationClips)
         {
             var newClip = ProcessClip(animationClip, savePath, targetBundleName, materialAttributeName, attributeSet,
-                skinnedMeshRenderers, type == AnimationType.Eyes);
+                skinnedMeshRenderers);
             importedAssets.Add(newClip);
         }
 
@@ -51,8 +51,7 @@ public static class TextureAnimationImporter
     }
 
     private static UnityEngine.AnimationClip ProcessClip(AssetStudio.AnimationClip animationClip, string savePath, string bundleName,
-        string materialAttributeName, CoordinateAttributeSet attributeSet, UnityEngine.SkinnedMeshRenderer[] skinnedMeshRenderers,
-        bool remap)
+        string materialAttributeName, CoordinateAttributeSet attributeSet, UnityEngine.SkinnedMeshRenderer[] skinnedMeshRenderers)
     {
         var uCurve = new UnityEngine.AnimationCurve();
         var vCurve = new UnityEngine.AnimationCurve();
@@ -79,11 +78,7 @@ public static class TextureAnimationImporter
             if (uCoordKey == null || vCoordKey == null)
                 continue;
 
-            Vector2 value = new Vector2(uCoordKey.value, vCoordKey.value);
-            if (remap)
-            {
-                value = RtdxTextureTo2x4Mappings[value];
-            }
+            Vector2 value = RtdxTextureTo2x4Mappings[new Vector2(uCoordKey.value, vCoordKey.value)];
 
             uCurve.AddKey(streamedFrames[frameIndex].time, value.x);
             vCurve.AddKey(streamedFrames[frameIndex].time, value.y);

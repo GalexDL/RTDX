@@ -8,13 +8,12 @@ public static class MouthAnimationProcessor
     private static Dictionary<Vector2, int> RtdxTextureToMouthType = new Dictionary<Vector2, int>
     {
         {new Vector2(0f, 0f), 0},
-        {new Vector2(0.25f, 0f), 1},
+        {new Vector2(0f, 0.5f), 1},
         {new Vector2(0.5f, 0f), 2},
-        {new Vector2(0.75f, 0f), 3},
-        {new Vector2(0f, 0.5f), 4},
-        {new Vector2(0.25f, 0.5f), 5},
-        {new Vector2(0.5f, 0.5f), 0},
-        {new Vector2(0.75f, 0.5f), 0},
+        {new Vector2(0.5f, 0.75f), 3},
+        {new Vector2(0f, 0.25f), 4},
+        {new Vector2(0.5f, 0.5f), 5},
+        {new Vector2(0f, 0.25f), 0},
     };
 
     public static void CreateSkeletalMouthAnimationsFromTextureAnimations(List<AnimationClip> textureAnimations,
@@ -62,6 +61,7 @@ public static class MouthAnimationProcessor
         foreach (var snapshot in snapshotsAtPath)
         {
             snapshot.Value.ApplyToClip(clip);
+            clip.EnsureQuaternionContinuity();
         }
         AnimationHelpers.SetAnimationTangentsToConstant(clip);
     }

@@ -68,6 +68,7 @@ public class BodyAnimationProcessor
         foreach (var snapshot in snapshotsAtPath)
         {
             snapshot.Value.ApplyToClip(newClip);
+            newClip.EnsureQuaternionContinuity();
         }
 
         onFinish(newClip);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using kamina;
-using SkyEditor.RomEditor.Rtdx.Domain.Structures;
+using SkyEditor.RomEditor.Domain.Rtdx.Structures;
 using Unity.EditorCoroutines.Editor;
 using UnityEditor;
 using UnityEngine;
@@ -34,7 +34,7 @@ public class MainSeriesModelImporter : EditorWindow, IHasCustomMenu
     private bool _buildAssetBundlesAfterImport = true;
 
     private bool _footCorrection = true;
-    private bool _createMouthAnimations;
+    private bool _createSkeletalMouthAnimations;
     private bool _mirrorMouth;
 
     private AnimationClip _currentPreviewClip;
@@ -335,8 +335,8 @@ public class MainSeriesModelImporter : EditorWindow, IHasCustomMenu
 
     private void DrawMouthPoseEditor()
     {
-        _createMouthAnimations = EditorGUILayout.ToggleLeft("Create mouth animations", _createMouthAnimations);
-        if (!_createMouthAnimations)
+        _createSkeletalMouthAnimations = EditorGUILayout.ToggleLeft("Create skeletal mouth animations", _createSkeletalMouthAnimations);
+        if (!_createSkeletalMouthAnimations)
             return;
 
         using (new EditorGUILayout.HorizontalScope())
@@ -575,37 +575,41 @@ public class MainSeriesModelImporter : EditorWindow, IHasCustomMenu
             _targetAnimationBundleName,
             TextureAnimationImporter.AnimationType.Eyes, _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
 
-        if (_createMouthAnimations)
-        {
-            EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 1/4)...", .92f);
+        EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 1/4)...", .92f);
 
-            var importedAnims = TextureAnimationImporter.Import(
-                ConfigManager.AssetBundleSourcePath + "/" + _sourceModelBundle,
-                modelAnimationsDir,
-                _targetModelName,
-                TextureAnimationImporter.AnimationType.Mouth,
-                _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
-            
-            EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 2/4)...", .94f);
+        var importedAnims = TextureAnimationImporter.Import(
+            ConfigManager.AssetBundleSourcePath + "/" + _sourceModelBundle,
+            modelAnimationsDir,
+            _targetModelName,
+            TextureAnimationImporter.AnimationType.Mouth,
+            _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
+
+        if (_createSkeletalMouthAnimations)
+        {
+            EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 2/4)...",
+                .94f);
 
             MouthAnimationProcessor.CreateSkeletalMouthAnimationsFromTextureAnimations(importedAnims, _mouthModel,
                 _targetObject.transform.FindDeepChild("PG_root"));
-            
-            EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 3/4)...", .96f);
+        }
 
-            importedAnims = TextureAnimationImporter.Import(_sourceAnimationBundle.FullName,
-                animationsDir,
-                _targetAnimationBundleName,
-                TextureAnimationImporter.AnimationType.Mouth,
-                _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
-            
+        EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 3/4)...", .96f);
+        
+        importedAnims = TextureAnimationImporter.Import(_sourceAnimationBundle.FullName,
+            animationsDir,
+            _targetAnimationBundleName,
+            TextureAnimationImporter.AnimationType.Mouth,
+            _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
+
+        if (_createSkeletalMouthAnimations)
+        {
             EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 4/4)...", .98f);
 
             MouthAnimationProcessor.CreateSkeletalMouthAnimationsFromTextureAnimations(importedAnims, _mouthModel,
                 _targetObject.transform.FindDeepChild("PG_root"));
-            
-            ResetMouth();
         }
+
+        ResetMouth();
 
         EditorUtility.DisplayProgressBar("Animation transfer", "Saving model...", 1f);
 
@@ -657,7 +661,7 @@ public class MainSeriesModelImporter : EditorWindow, IHasCustomMenu
             {
                 CreateMirroredTexture(texturePath);
             }
-            else if (fileName.ToLower().Contains("eye"))
+            else if (fileName.ToLower().Contains("eye") || fileName.ToLower().Contains("mouth"))
             {
                 CreateMirroredTextureForEyes(texturePath);
             }
@@ -716,6 +720,10 @@ public class MainSeriesModelImporter : EditorWindow, IHasCustomMenu
 
     private void RemoveConstraints()
     {
+        foreach (var bindposeStore in _targetObject.GetComponentsInChildren<BindposeStore>())
+        {
+            DestroyImmediate(bindposeStore);
+        }
         foreach (var constraint in _targetObject.GetComponentsInChildren<IConstraint>())
         {
             DestroyImmediate(constraint as UnityEngine.Object);
@@ -729,15 +737,10 @@ public class MainSeriesModelImporter : EditorWindow, IHasCustomMenu
     private void CreateResourceFile(string assetBundleName, string targetFolder,
         Func<(AnimationClip clip, bool belongsToModelBundle), bool> filter, bool includeModel)
     {
-        var includedClips = BodyAnimations.Concat(EyeAnimations);
-        if (_createMouthAnimations)
-        {
-            includedClips = includedClips.Concat(MouthAnimations);
-        }
         
         var resourceInfo = ModelResourceInfoEditorUtility.CreateResourceInfo(
             includeModel ? new[] {assetBundleName} : new string[]{},
-            includedClips.Where(filter)
+            _animationClips.Where(filter)
                 .Select(clip =>
                 {
                     var animationName = $"{assetBundleName}__{clip.clip.name}";
@@ -762,7 +765,10 @@ public class MainSeriesModelImporter : EditorWindow, IHasCustomMenu
     
     private void ResetMouth()
     {
-        _mouthModel.CurrentPoseIndex = 0;
+        if (_mouthModel != null)
+        {
+            _mouthModel.CurrentPoseIndex = 0;
+        }
     }
 
     private void UpdateSourceModelVisibility()

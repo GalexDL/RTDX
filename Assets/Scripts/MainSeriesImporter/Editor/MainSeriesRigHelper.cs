@@ -23,8 +23,11 @@ public static class MainSeriesRigHelper
         {"LHand", "L_Hand"},
         {"RHand", "R_Hand"},
         {"EffOverHead01", "PT_head"},
+        {"Tail1", "Tail"},
+        {"LEar", "PH_L_Ear"},
+        {"REar", "PH_R_Ear"},
     };
-    
+        
     private static readonly Dictionary<string, string> _reparentMap = new Dictionary<string, string>
     {
         {"Head", "PG_Neck"},
@@ -34,6 +37,7 @@ public static class MainSeriesRigHelper
         {"Spine", "Pelvis"},
         {"L_Thigh", "Pelvis"},
         {"R_Thigh", "Pelvis"},
+        {"Tail", "Pelvis"},
     };
 
     [MenuItem("Tools/Process Main Series Rig")]
@@ -64,7 +68,7 @@ public static class MainSeriesRigHelper
 
         if (!transform.FindDeepChild("PT_head"))
         {
-            // If there's no head effector we could use as PT_Head, add it as a direct child to the head so
+            // If there's no head effector we could use as PT_head, add it as a direct child to the head so
             // that Manpu show up somewhat correctly
             var head = transform.FindDeepChild("Head");
             if (head != null)

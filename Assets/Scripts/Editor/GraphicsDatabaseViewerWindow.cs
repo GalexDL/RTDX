@@ -1,4 +1,5 @@
-using SkyEditor.RomEditor.Rtdx.Domain;
+using SkyEditor.RomEditor.Domain.Rtdx;
+using SkyEditor.RomEditor.Domain.Rtdx.Constants;
 using UnityEditor;
 using UnityEngine;
 
@@ -47,11 +48,14 @@ public class GraphicsDatabaseViewerWindow : EditorWindow
                 using (new EditorGUILayout.HorizontalScope())
                 {
                     EditorGUILayout.LabelField(i.ToString(), EditorStyles.boldLabel, GUILayout.Width(40));
-                    EditorGUILayout.LabelField(((SkyEditor.RomEditor.Rtdx.Reverse.Const.creature.Index) i+1).ToString(), EditorStyles.boldLabel, GUILayout.Width(150));
-                    EditorGUILayout.LabelField($"({names[(SkyEditor.RomEditor.Rtdx.Reverse.Const.creature.Index) i+1]})", EditorStyles.boldLabel);
+                    EditorGUILayout.LabelField(((CreatureIndex) i+1).ToString(), EditorStyles.boldLabel, GUILayout.Width(150));
+                    EditorGUILayout.LabelField($"({names[(CreatureIndex) i+1]})", EditorStyles.boldLabel);
                 }
-                foreach (var graphicsDatabaseEntryId in formDbEntry.PokemonGraphicsDatabaseEntryIds)
+
+                for (var index
+                        = 0; index < formDbEntry.PokemonGraphicsDatabaseEntryIds.Length; index++)
                 {
+                    var graphicsDatabaseEntryId = formDbEntry.PokemonGraphicsDatabaseEntryIds[index];
                     if (graphicsDatabaseEntryId == 0 || graphicsDatabaseEntryId + 1 >= graphicsDbEntries.Count)
                         continue;
 

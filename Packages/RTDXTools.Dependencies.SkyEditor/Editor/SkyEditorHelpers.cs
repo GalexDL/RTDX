@@ -1,6 +1,5 @@
 using SkyEditor.IO.FileSystem;
-using SkyEditor.RomEditor.Rtdx.Domain;
-using SkyEditor.RomEditor.Rtdx.Domain.Automation;
+using SkyEditor.RomEditor.Domain.Rtdx;
 
 public static class SkyEditorHelpers
 {
