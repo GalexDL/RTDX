@@ -17,23 +17,6 @@ public static class PSMDImport
         
         new PSMDModelImporter(manifest).Run();
         
-        EditorUtility.DisplayProgressBar("PSMD Import - Adding to database...", 
-            "Adding models to GraphicsDatabase", 1f);
-
-        var rom = SkyEditorHelpers.GetRom();
-        foreach (var model in manifest.Models)
-        {
-            var graphicsDatabase = rom.GetPokemonGraphicsDatabase();
-            var entry = graphicsDatabase.Entries[model.GraphicsDatabaseSlot];
-            entry.ModelName = model.TargetName ?? entry.ModelName;
-            entry.AnimationName = model.RtdxAnimation ?? entry.AnimationName;
-        }
-        
-        EditorUtility.DisplayProgressBar("PSMD Import - Adding to database...", 
-            "Saving ROM", 1f);
-        
-        SkyEditorHelpers.SaveRom(rom);
-        
         EditorUtility.DisplayProgressBar("PSMD Import - Building AssetBundles...", 
             "Building AssetBundles...", 1f);
         

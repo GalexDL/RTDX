@@ -8,8 +8,6 @@ public class PSMDImportManifest
     public class Model
     {
         public string TargetName { get; set; }
-        public int GraphicsDatabaseSlot { get; set; }
         public string PsmdModel { get; set; }
-        public string RtdxAnimation { get; set; }
     }
 }

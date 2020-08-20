@@ -2,1866 +2,1120 @@ psmdPkGraphicPath: D:\3ds\pk_graphic
 
 models:
   - targetName: naetoru_00
-    graphicsDatabaseSlot: 470
     psmdModel: naetoru_00.bch
-    rtdxAnimation: 4leg_naetoru_00
 
   - targetName: hayashigame_00
-    graphicsDatabaseSlot: 471
     psmdModel: hayashigame_00.bch
-    rtdxAnimation: 4leg_doragon_00
 
   - targetName: dodaitosu_00
-    graphicsDatabaseSlot: 472
     psmdModel: dodaitosu_00.bch
-    rtdxAnimation: 4leg_doragon_00
 
   - targetName: hikozaru_00
-    graphicsDatabaseSlot: 473
     psmdModel: hikozaru_00.bch
-    rtdxAnimation: 2leg_hikozaru_00
 
   - targetName: moukazaru_00
-    graphicsDatabaseSlot: 474
     psmdModel: moukazaru_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: goukazaru_00
-    graphicsDatabaseSlot: 475
     psmdModel: goukazaru_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: potchama_00
-    graphicsDatabaseSlot: 476
     psmdModel: potchama_00.bch
-    rtdxAnimation: 2leg_potchama_00
 
   - targetName: pottaishi_00
-    graphicsDatabaseSlot: 477
     psmdModel: pottaishi_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: enperuto_00
-    graphicsDatabaseSlot: 478
     psmdModel: enperuto_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: mukkuru_00
-    graphicsDatabaseSlot: 479
     psmdModel: mukkuru_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: mukubaado_00
-    graphicsDatabaseSlot: 480
     psmdModel: mukubaado_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: mukuhooku_00
-    graphicsDatabaseSlot: 481
     psmdModel: mukuhooku_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: bippa_00
-    graphicsDatabaseSlot: 482
     psmdModel: bippa_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: biidaru_00
-    graphicsDatabaseSlot: 483
     psmdModel: biidaru_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: korobooshi_00
-    graphicsDatabaseSlot: 484
     psmdModel: korobooshi_00.bch
-    rtdxAnimation: 2leg_beast_up_00
 
   - targetName: korotokku_00
-    graphicsDatabaseSlot: 485
     psmdModel: korotokku_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: korinku_00
-    graphicsDatabaseSlot: 486
     psmdModel: korinku_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: rukushio_00
-    graphicsDatabaseSlot: 487
     psmdModel: rukushio_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: rentoraa_00
-    graphicsDatabaseSlot: 488
     psmdModel: rentoraa_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: zugaidosu_00
-    graphicsDatabaseSlot: 491
     psmdModel: zugaidosu_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: ramuparudo_00
-    graphicsDatabaseSlot: 492
     psmdModel: ramuparudo_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: tatetopusu_00
-    graphicsDatabaseSlot: 493
     psmdModel: tatetopusu_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: toridepusu_00
-    graphicsDatabaseSlot: 494
     psmdModel: toridepusu_00.bch
-    rtdxAnimation: 4leg_doragon_00
 
   - targetName: minomutchi_g_00
-    graphicsDatabaseSlot: 495
     psmdModel: minomutchi_g_00.bch
-    rtdxAnimation: body_minomutchi_00
 
   - targetName: minomutchi_s_00
-    graphicsDatabaseSlot: 496
     psmdModel: minomutchi_s_00.bch
-    rtdxAnimation: body_minomutchi_00
 
   - targetName: minomutchi_d_00
-    graphicsDatabaseSlot: 497
     psmdModel: minomutchi_d_00.bch
-    rtdxAnimation: body_minomutchi_00
 
   - targetName: minomadamu_g_00
-    graphicsDatabaseSlot: 498
     psmdModel: minomadamu_g_00.bch
-    rtdxAnimation: body_minomutchi_00
 
   - targetName: minomadamu_s_00
-    graphicsDatabaseSlot: 499
     psmdModel: minomadamu_s_00.bch
-    rtdxAnimation: body_minomutchi_00
 
   - targetName: minomadamu_d_00
-    graphicsDatabaseSlot: 500
     psmdModel: minomadamu_d_00.bch
-    rtdxAnimation: body_minomutchi_00
 
   - targetName: gaameiru_00
-    graphicsDatabaseSlot: 501
     psmdModel: gaameiru_00.bch
-    rtdxAnimation: fly_bibiyon_00
 
   - targetName: mitsuhanii_00
-    graphicsDatabaseSlot: 502
     psmdModel: mitsuhanii_00.bch
-    rtdxAnimation: fly_mitsuhanii_00
 
   - targetName: mitsuhanii_f_00
-    graphicsDatabaseSlot: 503
     psmdModel: mitsuhanii_f_00.bch
-    rtdxAnimation: fly_mitsuhanii_00
 
   - targetName: biikuin_00
-    graphicsDatabaseSlot: 504
     psmdModel: biikuin_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: pachirisu_00
-    graphicsDatabaseSlot: 505
     psmdModel: pachirisu_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: buizeru_00
-    graphicsDatabaseSlot: 506
     psmdModel: buizeru_00.bch
-    rtdxAnimation: 2leg_buizeru_00
 
   - targetName: buizeru_f_00
-    graphicsDatabaseSlot: 507
     psmdModel: buizeru_f_00.bch
-    rtdxAnimation: 2leg_buizeru_00
 
   - targetName: furoozeru_00
-    graphicsDatabaseSlot: 508
     psmdModel: furoozeru_00.bch
-    rtdxAnimation: 2leg_furoozeru_00
 
   - targetName: furoozeru_f_00
-    graphicsDatabaseSlot: 509
     psmdModel: furoozeru_f_00.bch
-    rtdxAnimation: 2leg_furoozeru_00
 
   - targetName: cherinbo_00
-    graphicsDatabaseSlot: 510
     psmdModel: cherinbo_00.bch
-    rtdxAnimation: 2leg_bound_00
 
   - targetName: cherimu_n_00
-    graphicsDatabaseSlot: 511
     psmdModel: cherimu_n_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: cherimu_p_00
-    graphicsDatabaseSlot: 512
     psmdModel: cherimu_p_00.bch
-    rtdxAnimation: 2leg_beast_up_00
 
   - targetName: karanakushi_e_00
-    graphicsDatabaseSlot: 513
     psmdModel: karanakushi_e_00.bch
-    rtdxAnimation: 6leg_insect_00
 
   - targetName: karanakushi_w_00
-    graphicsDatabaseSlot: 514
     psmdModel: karanakushi_w_00.bch
-    rtdxAnimation: 6leg_insect_00
 
   - targetName: toritodon_e_00
-    graphicsDatabaseSlot: 515
     psmdModel: toritodon_e_00.bch
-    rtdxAnimation: 6leg_insect_00
 
   - targetName: toritodon_w_00
-    graphicsDatabaseSlot: 516
     psmdModel: toritodon_w_00.bch
-    rtdxAnimation: 6leg_insect_00
 
   - targetName: fuwante_00
-    graphicsDatabaseSlot: 518
     psmdModel: fuwante_00.bch
-    rtdxAnimation: float_body_00
 
   - targetName: fuwaraido_00
-    graphicsDatabaseSlot: 519
     psmdModel: fuwaraido_00.bch
-    rtdxAnimation: fly_dokukurage_00
 
   - targetName: mimiroru_00
-    graphicsDatabaseSlot: 520
     psmdModel: mimiroru_00.bch
-    rtdxAnimation: 2leg_beast_up_00
 
   - targetName: mimiroppu_00
-    graphicsDatabaseSlot: 521
     psmdModel: mimiroppu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: nyarumaa_00
-    graphicsDatabaseSlot: 525
     psmdModel: nyarumaa_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: bunyatto_00
-    graphicsDatabaseSlot: 526
     psmdModel: bunyatto_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: sukanpuu_00
-    graphicsDatabaseSlot: 528
     psmdModel: sukanpuu_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: sukatanku_00
-    graphicsDatabaseSlot: 529
     psmdModel: sukatanku_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: doomiraa_00
-    graphicsDatabaseSlot: 530
     psmdModel: doomiraa_00.bch
-    rtdxAnimation: float_body_00
 
   - targetName: dootakun_00
-    graphicsDatabaseSlot: 531
     psmdModel: dootakun_00.bch
-    rtdxAnimation: float_body_00
 
   - targetName: perappu_00
-    graphicsDatabaseSlot: 535
     psmdModel: perappu_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: mikaruge_00
-    graphicsDatabaseSlot: 536
     psmdModel: mikaruge_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: fukamaru_00
-    graphicsDatabaseSlot: 537
     psmdModel: fukamaru_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: gabaito_00
-    graphicsDatabaseSlot: 538
     psmdModel: gabaito_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: gaburiasu_00
-    graphicsDatabaseSlot: 539
     psmdModel: gaburiasu_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: gaburiasu_mega_00
-    graphicsDatabaseSlot: 540
     psmdModel: gaburiasu_mega_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: hipopotasu_00
-    graphicsDatabaseSlot: 545
     psmdModel: hipopotasu_00.bch
-    rtdxAnimation: 4leg_hipopotasu_00
 
   - targetName: hipopotasu_f_00
-    graphicsDatabaseSlot: 546
     psmdModel: hipopotasu_f_00.bch
-    rtdxAnimation: 4leg_hipopotasu_00
 
   - targetName: kabarudon_00
-    graphicsDatabaseSlot: 547
     psmdModel: kabarudon_00.bch
-    rtdxAnimation: 4leg_hipopotasu_00
 
   - targetName: kabarudon_f_00
-    graphicsDatabaseSlot: 548
     psmdModel: kabarudon_f_00.bch
-    rtdxAnimation: 4leg_hipopotasu_00
 
   - targetName: sukorupi_00
-    graphicsDatabaseSlot: 549
     psmdModel: sukorupi_00.bch
-    rtdxAnimation: 4leg_insect_00
 
   - targetName: dorapion_00
-    graphicsDatabaseSlot: 550
     psmdModel: dorapion_00.bch
-    rtdxAnimation: 4leg_doragon_00
 
   - targetName: guregguru_00
-    graphicsDatabaseSlot: 551
     psmdModel: guregguru_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: dokuroggu_00
-    graphicsDatabaseSlot: 552
     psmdModel: dokuroggu_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: masukippa_00
-    graphicsDatabaseSlot: 553
     psmdModel: masukippa_00.bch
-    rtdxAnimation: fly_masukippa_00
 
   - targetName: keikouo_00
-    graphicsDatabaseSlot: 554
     psmdModel: keikouo_00.bch
-    rtdxAnimation: fly_hinbasu_00
 
   - targetName: neoranto_00
-    graphicsDatabaseSlot: 555
     psmdModel: neoranto_00.bch
-    rtdxAnimation: fly_hinbasu_00
 
   - targetName: yukikaburi_00
-    graphicsDatabaseSlot: 557
     psmdModel: yukikaburi_00.bch
-    rtdxAnimation: 2leg_yukikaburi_00
 
   - targetName: yukikaburi_f_00
-    graphicsDatabaseSlot: 558
     psmdModel: yukikaburi_f_00.bch
-    rtdxAnimation: 2leg_yukikaburi_00
 
   - targetName: yukinooo_00
-    graphicsDatabaseSlot: 559
     psmdModel: yukinooo_00.bch
-    rtdxAnimation: 2leg_beast_up_00
 
   - targetName: yukinooo_mega_00
-    graphicsDatabaseSlot: 560
     psmdModel: yukinooo_mega_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: rotomu_00
-    graphicsDatabaseSlot: 580
     psmdModel: rotomu_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: rotomu_h_00
-    graphicsDatabaseSlot: 581
     psmdModel: rotomu_h_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: rotomu_s_00
-    graphicsDatabaseSlot: 584
     psmdModel: rotomu_s_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: rotomu_f_00
-    graphicsDatabaseSlot: 583
     psmdModel: rotomu_f_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: rotomu_w_00
-    graphicsDatabaseSlot: 582
     psmdModel: rotomu_w_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: rotomu_c_00
-    graphicsDatabaseSlot: 585
     psmdModel: rotomu_c_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: yukushii_00
-    graphicsDatabaseSlot: 586
     psmdModel: yukushii_00.bch
-    rtdxAnimation: fly_yukushii_00
 
   - targetName: emuritto_00
-    graphicsDatabaseSlot: 587
     psmdModel: emuritto_00.bch
-    rtdxAnimation: fly_yukushii_00
 
   - targetName: agunomu_00
-    graphicsDatabaseSlot: 588
     psmdModel: agunomu_00.bch
-    rtdxAnimation: fly_yukushii_00
 
   - targetName: diaruga_00
-    graphicsDatabaseSlot: 589
     psmdModel: diaruga_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: parukia_00
-    graphicsDatabaseSlot: 590
     psmdModel: parukia_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: hiidoran_00
-    graphicsDatabaseSlot: 591
     psmdModel: hiidoran_00.bch
-    rtdxAnimation: 4leg_doragon_00
 
   - targetName: rejigigasu_00
-    graphicsDatabaseSlot: 592
     psmdModel: rejigigasu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: giratyina_a_00
-    graphicsDatabaseSlot: 593
     psmdModel: giratyina_a_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: giratyina_o_00
-    graphicsDatabaseSlot: 594
     psmdModel: giratyina_o_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: kureseria_00
-    graphicsDatabaseSlot: 595
     psmdModel: kureseria_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: fione_00
-    graphicsDatabaseSlot: 596
     psmdModel: fione_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: manafi_00
-    graphicsDatabaseSlot: 597
     psmdModel: manafi_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: daakurai_00
-    graphicsDatabaseSlot: 598
     psmdModel: daakurai_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: sheimi_l_00
-    graphicsDatabaseSlot: 599
     psmdModel: sheimi_l_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: sheimi_s_00
-    graphicsDatabaseSlot: 600
     psmdModel: sheimi_s_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: aruseusu_normal_00
-    graphicsDatabaseSlot: 601
     psmdModel: aruseusu_normal_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_grass_00
-    graphicsDatabaseSlot: 602
     psmdModel: aruseusu_grass_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_fire_00
-    graphicsDatabaseSlot: 603
     psmdModel: aruseusu_fire_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_water_00
-    graphicsDatabaseSlot: 604
     psmdModel: aruseusu_water_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_electric_00
-    graphicsDatabaseSlot: 605
     psmdModel: aruseusu_electric_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_ice_00
-    graphicsDatabaseSlot: 606
     psmdModel: aruseusu_ice_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_fighting_00
-    graphicsDatabaseSlot: 607
     psmdModel: aruseusu_fighting_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_poison_00
-    graphicsDatabaseSlot: 608
     psmdModel: aruseusu_poison_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_ground_00
-    graphicsDatabaseSlot: 609
     psmdModel: aruseusu_ground_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_flying_00
-    graphicsDatabaseSlot: 610
     psmdModel: aruseusu_flying_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_psychic_00
-    graphicsDatabaseSlot: 611
     psmdModel: aruseusu_psychic_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_bug_00
-    graphicsDatabaseSlot: 612
     psmdModel: aruseusu_bug_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_rock_00
-    graphicsDatabaseSlot: 613
     psmdModel: aruseusu_rock_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_ghost_00
-    graphicsDatabaseSlot: 614
     psmdModel: aruseusu_ghost_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_dragon_00
-    graphicsDatabaseSlot: 615
     psmdModel: aruseusu_dragon_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_dark_00
-    graphicsDatabaseSlot: 616
     psmdModel: aruseusu_dark_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_steel_00
-    graphicsDatabaseSlot: 617
     psmdModel: aruseusu_steel_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: aruseusu_fairy_00
-    graphicsDatabaseSlot: 618
     psmdModel: aruseusu_fairy_00.bch
-    rtdxAnimation: 4leg_aruseusu_00
 
   - targetName: bikutyini_00
-    graphicsDatabaseSlot: 619
     psmdModel: bikutyini_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: tsutaaja_00
-    graphicsDatabaseSlot: 620
     psmdModel: tsutaaja_00.bch
-    rtdxAnimation: 2leg_tsutaaja_00
 
   - targetName: janobii_00
-    graphicsDatabaseSlot: 621
     psmdModel: janobii_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: jarooda_00
-    graphicsDatabaseSlot: 622
     psmdModel: jarooda_00.bch
-    rtdxAnimation: 1leg_snake_00
 
   - targetName: pokabu_00
-    graphicsDatabaseSlot: 623
     psmdModel: pokabu_00.bch
-    rtdxAnimation: 4leg_pokabu_00
 
   - targetName: chaobuu_00
-    graphicsDatabaseSlot: 624
     psmdModel: chaobuu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: enbuoo_00
-    graphicsDatabaseSlot: 625
     psmdModel: enbuoo_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: mijumaru_00
-    graphicsDatabaseSlot: 626
     psmdModel: mijumaru_00.bch
-    rtdxAnimation: 2leg_mijumaru_00
 
   - targetName: futachimaru_00
-    graphicsDatabaseSlot: 627
     psmdModel: futachimaru_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: daikenki_00
-    graphicsDatabaseSlot: 628
     psmdModel: daikenki_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: minezumi_00
-    graphicsDatabaseSlot: 629
     psmdModel: minezumi_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: miruhoggu_00
-    graphicsDatabaseSlot: 630
     psmdModel: miruhoggu_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: yooterii_00
-    graphicsDatabaseSlot: 631
     psmdModel: yooterii_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: haaderia_00
-    graphicsDatabaseSlot: 632
     psmdModel: haaderia_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: muurando_00
-    graphicsDatabaseSlot: 633
     psmdModel: muurando_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: choroneko_00
-    graphicsDatabaseSlot: 634
     psmdModel: choroneko_00.bch
-    rtdxAnimation: 2leg_beast_up_00
 
   - targetName: reparudasu_00
-    graphicsDatabaseSlot: 635
     psmdModel: reparudasu_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: yanappu_00
-    graphicsDatabaseSlot: 636
     psmdModel: yanappu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: yanakkii_00
-    graphicsDatabaseSlot: 637
     psmdModel: yanakkii_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: baoppu_00
-    graphicsDatabaseSlot: 638
     psmdModel: baoppu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: baokkii_00
-    graphicsDatabaseSlot: 639
     psmdModel: baokkii_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: hiyappu_00
-    graphicsDatabaseSlot: 640
     psmdModel: hiyappu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: hiyakkii_00
-    graphicsDatabaseSlot: 641
     psmdModel: hiyakkii_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: munna_00
-    graphicsDatabaseSlot: 642
     psmdModel: munna_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: mushaana_00
-    graphicsDatabaseSlot: 643
     psmdModel: mushaana_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: mamepato_00
-    graphicsDatabaseSlot: 644
     psmdModel: mamepato_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: hatoobooo_00
-    graphicsDatabaseSlot: 645
     psmdModel: hatoobooo_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: kenhorou_00
-    graphicsDatabaseSlot: 646
     psmdModel: kenhorou_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: kenhorou_f_00
-    graphicsDatabaseSlot: 647
     psmdModel: kenhorou_f_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: shimama_00
-    graphicsDatabaseSlot: 648
     psmdModel: shimama_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: zeburaika_00
-    graphicsDatabaseSlot: 649
     psmdModel: zeburaika_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: dangoro_00
-    graphicsDatabaseSlot: 650
     psmdModel: dangoro_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: gantoru_00
-    graphicsDatabaseSlot: 651
     psmdModel: gantoru_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: gigaiasu_00
-    graphicsDatabaseSlot: 652
     psmdModel: gigaiasu_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: koromori_00
-    graphicsDatabaseSlot: 653
     psmdModel: koromori_00.bch
-    rtdxAnimation: fly_bat_00
 
   - targetName: kokoromori_00
-    graphicsDatabaseSlot: 654
     psmdModel: kokoromori_00.bch
-    rtdxAnimation: fly_bat_00
 
   - targetName: moguryuu_00
-    graphicsDatabaseSlot: 655
     psmdModel: moguryuu_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: doryuuzu_00
-    graphicsDatabaseSlot: 656
     psmdModel: doryuuzu_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: tabunne_00
-    graphicsDatabaseSlot: 657
     psmdModel: tabunne_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: dokkoraa_00
-    graphicsDatabaseSlot: 659
     psmdModel: dokkoraa_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: dotekkotsu_00
-    graphicsDatabaseSlot: 660
     psmdModel: dotekkotsu_00.bch
-    rtdxAnimation: 2leg_dotekkotsu_00
 
   - targetName: roobushin_00
-    graphicsDatabaseSlot: 661
     psmdModel: roobushin_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: otamaro_00
-    graphicsDatabaseSlot: 662
     psmdModel: otamaro_00.bch
-    rtdxAnimation: body_bound_00
 
   - targetName: gamagaru_00
-    graphicsDatabaseSlot: 663
     psmdModel: gamagaru_00.bch
-    rtdxAnimation: 2leg_bound_00
 
   - targetName: gamageroge_00
-    graphicsDatabaseSlot: 664
     psmdModel: gamageroge_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: nageki_00
-    graphicsDatabaseSlot: 665
     psmdModel: nageki_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: dageki_00
-    graphicsDatabaseSlot: 666
     psmdModel: dageki_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: kurumiru_00
-    graphicsDatabaseSlot: 667
     psmdModel: kurumiru_00.bch
-    rtdxAnimation: 6leg_insect_00
 
   - targetName: kurumayu_00
-    graphicsDatabaseSlot: 668
     psmdModel: kurumayu_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: hahakomori_00
-    graphicsDatabaseSlot: 669
     psmdModel: hahakomori_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: fushide_00
-    graphicsDatabaseSlot: 670
     psmdModel: fushide_00.bch
-    rtdxAnimation: 6leg_insect_00
 
   - targetName: hoiiga_00
-    graphicsDatabaseSlot: 671
     psmdModel: hoiiga_00.bch
-    rtdxAnimation: body_bound_00
 
   - targetName: pendoraa_00
-    graphicsDatabaseSlot: 672
     psmdModel: pendoraa_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: monmen_00
-    graphicsDatabaseSlot: 673
     psmdModel: monmen_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: erufuun_00
-    graphicsDatabaseSlot: 674
     psmdModel: erufuun_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: churine_00
-    graphicsDatabaseSlot: 675
     psmdModel: churine_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: doredyia_00
-    graphicsDatabaseSlot: 676
     psmdModel: doredyia_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: basurao_r_00
-    graphicsDatabaseSlot: 677
     psmdModel: basurao_r_00.bch
-    rtdxAnimation: fly_hinbasu_00
 
   - targetName: basurao_b_00
-    graphicsDatabaseSlot: 678
     psmdModel: basurao_b_00.bch
-    rtdxAnimation: fly_hinbasu_00
 
   - targetName: meguroko_00
-    graphicsDatabaseSlot: 679
     psmdModel: meguroko_00.bch
-    rtdxAnimation: 4leg_doragon_00
 
   - targetName: warubiru_00
-    graphicsDatabaseSlot: 680
     psmdModel: warubiru_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: warubiaru_00
-    graphicsDatabaseSlot: 681
     psmdModel: warubiaru_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: darumakka_00
-    graphicsDatabaseSlot: 682
     psmdModel: darumakka_00.bch
-    rtdxAnimation: 2leg_beast_up_00
 
   - targetName: hihidaruma_n_00
-    graphicsDatabaseSlot: 683
     psmdModel: hihidaruma_n_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: hihidaruma_d_00
-    graphicsDatabaseSlot: 684
     psmdModel: hihidaruma_d_00.bch
-    rtdxAnimation: body_bound_00
 
   - targetName: marakatchi_00
-    graphicsDatabaseSlot: 685
     psmdModel: marakatchi_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: ishizumai_00
-    graphicsDatabaseSlot: 686
     psmdModel: ishizumai_00.bch
-    rtdxAnimation: 6leg_crab_00
 
   - targetName: iwaparesu_00
-    graphicsDatabaseSlot: 687
     psmdModel: iwaparesu_00.bch
-    rtdxAnimation: 6leg_crab_00
 
   - targetName: zuruggu_00
-    graphicsDatabaseSlot: 688
     psmdModel: zuruggu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: zuruzukin_00
-    graphicsDatabaseSlot: 689
     psmdModel: zuruzukin_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: shinboraa_00
-    graphicsDatabaseSlot: 690
     psmdModel: shinboraa_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: desumasu_00
-    graphicsDatabaseSlot: 691
     psmdModel: desumasu_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: desukaan_00
-    graphicsDatabaseSlot: 692
     psmdModel: desukaan_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: purotooga_00
-    graphicsDatabaseSlot: 693
     psmdModel: purotooga_00.bch
-    rtdxAnimation: 4leg_tortoise_00
 
   - targetName: abagoora_00
-    graphicsDatabaseSlot: 694
     psmdModel: abagoora_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: aaken_00
-    graphicsDatabaseSlot: 695
     psmdModel: aaken_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: aakeosu_00
-    graphicsDatabaseSlot: 696
     psmdModel: aakeosu_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: yabukuron_00
-    graphicsDatabaseSlot: 697
     psmdModel: yabukuron_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: dasutodasu_00
-    graphicsDatabaseSlot: 698
     psmdModel: dasutodasu_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: zoroa_00
-    graphicsDatabaseSlot: 699
     psmdModel: zoroa_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: zoroaaku_00
-    graphicsDatabaseSlot: 700
     psmdModel: zoroaaku_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: chiraamii_00
-    graphicsDatabaseSlot: 701
     psmdModel: chiraamii_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: chirachiino_00
-    graphicsDatabaseSlot: 702
     psmdModel: chirachiino_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: gochimu_00
-    graphicsDatabaseSlot: 703
     psmdModel: gochimu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: gochimiru_00
-    graphicsDatabaseSlot: 704
     psmdModel: gochimiru_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: gochiruzeru_00
-    graphicsDatabaseSlot: 705
     psmdModel: gochiruzeru_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: yuniran_00
-    graphicsDatabaseSlot: 706
     psmdModel: yuniran_00.bch
-    rtdxAnimation: float_body_00
 
   - targetName: daburan_00
-    graphicsDatabaseSlot: 707
     psmdModel: daburan_00.bch
-    rtdxAnimation: float_body_00
 
   - targetName: rankurusu_00
-    graphicsDatabaseSlot: 708
     psmdModel: rankurusu_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: koaruhii_00
-    graphicsDatabaseSlot: 709
     psmdModel: koaruhii_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: suwanna_00
-    graphicsDatabaseSlot: 710
     psmdModel: suwanna_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: baniputchi_00
-    graphicsDatabaseSlot: 711
     psmdModel: baniputchi_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: baniritchi_00
-    graphicsDatabaseSlot: 712
     psmdModel: baniritchi_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: baibanira_00
-    graphicsDatabaseSlot: 713
     psmdModel: baibanira_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: shikijika_spring_00
-    graphicsDatabaseSlot: 714
     psmdModel: shikijika_spring_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: mebukijika_spring_00
-    graphicsDatabaseSlot: 718
     psmdModel: mebukijika_spring_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: emonga_00
-    graphicsDatabaseSlot: 722
     psmdModel: emonga_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: kaburumo_00
-    graphicsDatabaseSlot: 723
     psmdModel: kaburumo_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: shubarugo_00
-    graphicsDatabaseSlot: 724
     psmdModel: shubarugo_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: tamagetake_00
-    graphicsDatabaseSlot: 725
     psmdModel: tamagetake_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: morobareru_00
-    graphicsDatabaseSlot: 726
     psmdModel: morobareru_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: pururiru_00
-    graphicsDatabaseSlot: 727
     psmdModel: pururiru_00.bch
-    rtdxAnimation: fly_masukippa_00
 
   - targetName: pururiru_f_00
-    graphicsDatabaseSlot: 728
     psmdModel: pururiru_f_00.bch
-    rtdxAnimation: fly_masukippa_00
 
   - targetName: burungeru_00
-    graphicsDatabaseSlot: 729
     psmdModel: burungeru_00.bch
-    rtdxAnimation: fly_masukippa_00
 
   - targetName: burungeru_f_00
-    graphicsDatabaseSlot: 730
     psmdModel: burungeru_f_00.bch
-    rtdxAnimation: fly_masukippa_00
 
   - targetName: mamanbou_00
-    graphicsDatabaseSlot: 731
     psmdModel: mamanbou_00.bch
-    rtdxAnimation: fly_tosakinto_00
 
   - targetName: bachuru_00
-    graphicsDatabaseSlot: 732
     psmdModel: bachuru_00.bch
-    rtdxAnimation: 4leg_insect_00
 
   - targetName: denchura_00
-    graphicsDatabaseSlot: 733
     psmdModel: denchura_00.bch
-    rtdxAnimation: 4leg_insect_00
 
   - targetName: tesshiido_00
-    graphicsDatabaseSlot: 734
     psmdModel: tesshiido_00.bch
-    rtdxAnimation: body_bound_00
 
   - targetName: nattorei_00
-    graphicsDatabaseSlot: 735
     psmdModel: nattorei_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: giaru_00
-    graphicsDatabaseSlot: 736
     psmdModel: giaru_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: gigiaru_00
-    graphicsDatabaseSlot: 737
     psmdModel: gigiaru_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: gigigiaru_00
-    graphicsDatabaseSlot: 738
     psmdModel: gigigiaru_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: shibishirasu_00
-    graphicsDatabaseSlot: 739
     psmdModel: shibishirasu_00.bch
-    rtdxAnimation: fly_tosakinto_00
 
   - targetName: shibibiiru_00
-    graphicsDatabaseSlot: 740
     psmdModel: shibibiiru_00.bch
-    rtdxAnimation: 1leg_snake_00
 
   - targetName: shibirudon_00
-    graphicsDatabaseSlot: 741
     psmdModel: shibirudon_00.bch
-    rtdxAnimation: 1leg_snake_00
 
   - targetName: riguree_00
-    graphicsDatabaseSlot: 742
     psmdModel: riguree_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: oobemu_00
-    graphicsDatabaseSlot: 743
     psmdModel: oobemu_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: hitomoshi_00
-    graphicsDatabaseSlot: 744
     psmdModel: hitomoshi_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: ranpuraa_00
-    graphicsDatabaseSlot: 745
     psmdModel: ranpuraa_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: shandera_00
-    graphicsDatabaseSlot: 746
     psmdModel: shandera_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: kibago_00
-    graphicsDatabaseSlot: 747
     psmdModel: kibago_00.bch
-    rtdxAnimation: 2leg_kibago_00
 
   - targetName: onondo_00
-    graphicsDatabaseSlot: 748
     psmdModel: onondo_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: ononokusu_00
-    graphicsDatabaseSlot: 749
     psmdModel: ononokusu_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: kumashun_00
-    graphicsDatabaseSlot: 750
     psmdModel: kumashun_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: tsunbeaa_00
-    graphicsDatabaseSlot: 751
     psmdModel: tsunbeaa_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: furiijio_00
-    graphicsDatabaseSlot: 752
     psmdModel: furiijio_00.bch
-    rtdxAnimation: float_body_00
 
   - targetName: chobomaki_00
-    graphicsDatabaseSlot: 753
     psmdModel: chobomaki_00.bch
-    rtdxAnimation: 2leg_bound_00
 
   - targetName: agirudaa_00
-    graphicsDatabaseSlot: 754
     psmdModel: agirudaa_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: maggyo_00
-    graphicsDatabaseSlot: 755
     psmdModel: maggyo_00.bch
-    rtdxAnimation: body_bound_00
 
   - targetName: kojofuu_00
-    graphicsDatabaseSlot: 756
     psmdModel: kojofuu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: kojondo_00
-    graphicsDatabaseSlot: 757
     psmdModel: kojondo_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: kurimugan_00
-    graphicsDatabaseSlot: 758
     psmdModel: kurimugan_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: gobitto_00
-    graphicsDatabaseSlot: 759
     psmdModel: gobitto_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: goruugu_00
-    graphicsDatabaseSlot: 760
     psmdModel: goruugu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: komatana_00
-    graphicsDatabaseSlot: 761
     psmdModel: komatana_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: kirikizan_00
-    graphicsDatabaseSlot: 762
     psmdModel: kirikizan_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: baffuron_00
-    graphicsDatabaseSlot: 763
     psmdModel: baffuron_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: washibon_00
-    graphicsDatabaseSlot: 764
     psmdModel: washibon_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: wooguru_00
-    graphicsDatabaseSlot: 765
     psmdModel: wooguru_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: baruchai_00
-    graphicsDatabaseSlot: 766
     psmdModel: baruchai_00.bch
-    rtdxAnimation: 2leg_bird_00
 
   - targetName: barujiina_00
-    graphicsDatabaseSlot: 767
     psmdModel: barujiina_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: kuitaran_00
-    graphicsDatabaseSlot: 768
     psmdModel: kuitaran_00.bch
-    rtdxAnimation: 2leg_beast_up_00
 
   - targetName: aianto_00
-    graphicsDatabaseSlot: 769
     psmdModel: aianto_00.bch
-    rtdxAnimation: 6leg_crab_00
 
   - targetName: monozu_00
-    graphicsDatabaseSlot: 770
     psmdModel: monozu_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: jiheddo_00
-    graphicsDatabaseSlot: 771
     psmdModel: jiheddo_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: sazandora_00
-    graphicsDatabaseSlot: 772
     psmdModel: sazandora_00.bch
-    rtdxAnimation: fly_sazandora_00
 
   - targetName: meraruba_00
-    graphicsDatabaseSlot: 773
     psmdModel: meraruba_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: urugamosu_00
-    graphicsDatabaseSlot: 774
     psmdModel: urugamosu_00.bch
-    rtdxAnimation: fly_butterfly_00
 
   - targetName: kobaruon_00
-    graphicsDatabaseSlot: 775
     psmdModel: kobaruon_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: terakion_00
-    graphicsDatabaseSlot: 776
     psmdModel: terakion_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: birijion_00
-    graphicsDatabaseSlot: 777
     psmdModel: birijion_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: torunerosu_00
-    graphicsDatabaseSlot: 778
     psmdModel: torunerosu_00.bch
-    rtdxAnimation: float_borutorosu_00
 
   - targetName: torunerosu_r_00
-    graphicsDatabaseSlot: 779
     psmdModel: torunerosu_r_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: borutorosu_00
-    graphicsDatabaseSlot: 780
     psmdModel: borutorosu_00.bch
-    rtdxAnimation: float_borutorosu_00
 
   - targetName: borutorosu_r_00
-    graphicsDatabaseSlot: 781
     psmdModel: borutorosu_r_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: reshiramu_10
-    graphicsDatabaseSlot: 782
     psmdModel: reshiramu_10.bch
-    rtdxAnimation: 2leg_reshiramu_00
 
   - targetName: zekuromu_10
-    graphicsDatabaseSlot: 783
     psmdModel: zekuromu_10.bch
-    rtdxAnimation: 2leg_zekuromu_00
 
   - targetName: randorosu_00
-    graphicsDatabaseSlot: 784
     psmdModel: randorosu_00.bch
-    rtdxAnimation: float_borutorosu_00
 
   - targetName: randorosu_r_00
-    graphicsDatabaseSlot: 785
     psmdModel: randorosu_r_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: kyuremu_00
-    graphicsDatabaseSlot: 786
     psmdModel: kyuremu_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: kyuremu_40
-    graphicsDatabaseSlot: 787
     psmdModel: kyuremu_40.bch
-    rtdxAnimation: 2leg_kyuremu_30
 
   - targetName: kyuremu_20
-    graphicsDatabaseSlot: 788
     psmdModel: kyuremu_20.bch
-    rtdxAnimation: 2leg_kyuremu_10
 
   - targetName: kerudyio_00
-    graphicsDatabaseSlot: 789
     psmdModel: kerudyio_00.bch
-    rtdxAnimation: 4leg_beast_00
 
   - targetName: kerudyio_k_00
-    graphicsDatabaseSlot: 790
     psmdModel: kerudyio_k_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: meroetta_v_00
-    graphicsDatabaseSlot: 791
     psmdModel: meroetta_v_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: meroetta_s_00
-    graphicsDatabaseSlot: 792
     psmdModel: meroetta_s_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: genosekuto_00
-    graphicsDatabaseSlot: 793
     psmdModel: genosekuto_00.bch
-    rtdxAnimation: 2leg_genosekuto_00
 
   - targetName: genosekuto_a_00
-    graphicsDatabaseSlot: 794
     psmdModel: genosekuto_a_00.bch
-    rtdxAnimation: 2leg_genosekuto_00
 
   - targetName: genosekuto_i_00
-    graphicsDatabaseSlot: 795
     psmdModel: genosekuto_i_00.bch
-    rtdxAnimation: 2leg_genosekuto_00
 
   - targetName: genosekuto_b_00
-    graphicsDatabaseSlot: 796
     psmdModel: genosekuto_b_00.bch
-    rtdxAnimation: 2leg_genosekuto_00
 
   - targetName: genosekuto_f_00
-    graphicsDatabaseSlot: 797
     psmdModel: genosekuto_f_00.bch
-    rtdxAnimation: 2leg_genosekuto_00
 
   - targetName: harimaron_00
-    graphicsDatabaseSlot: 798
     psmdModel: harimaron_00.bch
-    rtdxAnimation: 2leg_harimaron_00
 
   - targetName: hariboogu_00
-    graphicsDatabaseSlot: 799
     psmdModel: hariboogu_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: burigaron_00
-    graphicsDatabaseSlot: 800
     psmdModel: burigaron_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: fokko_00
-    graphicsDatabaseSlot: 801
     psmdModel: fokko_00.bch
-    rtdxAnimation: 4leg_fokko_00
 
   - targetName: teerunaa_00
-    graphicsDatabaseSlot: 802
     psmdModel: teerunaa_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: mafokushii_00
-    graphicsDatabaseSlot: 803
     psmdModel: mafokushii_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: keromatsu_00
-    graphicsDatabaseSlot: 804
     psmdModel: keromatsu_00.bch
-    rtdxAnimation: 2leg_keromatsu_00
 
   - targetName: gekogashira_00
-    graphicsDatabaseSlot: 805
     psmdModel: gekogashira_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: gekkouga_00
-    graphicsDatabaseSlot: 806
     psmdModel: gekkouga_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: horubii_00
-    graphicsDatabaseSlot: 807
     psmdModel: horubii_00.bch
-    rtdxAnimation: 2leg_beast_00
 
   - targetName: horuudo_00
-    graphicsDatabaseSlot: 808
     psmdModel: horuudo_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: yayakoma_00
-    graphicsDatabaseSlot: 809
     psmdModel: yayakoma_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: hinoyakoma_00
-    graphicsDatabaseSlot: 810
     psmdModel: hinoyakoma_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: faiaroo_00
-    graphicsDatabaseSlot: 811
     psmdModel: faiaroo_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: kofukimushi_00
-    graphicsDatabaseSlot: 812
     psmdModel: kofukimushi_00.bch
-    rtdxAnimation: 6leg_insect_00
 
   - targetName: kofukimushi_00
-    graphicsDatabaseSlot: 813
     psmdModel: kofukimushi_00.bch
-    rtdxAnimation: 6leg_insect_00
 
   - targetName: kofuurai_00
-    graphicsDatabaseSlot: 832
     psmdModel: kofuurai_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: kofuurai_00
-    graphicsDatabaseSlot: 833
     psmdModel: kofuurai_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: bibiyon_hanazono_00
-    graphicsDatabaseSlot: 852
     psmdModel: bibiyon_hanazono_00.bch
-    rtdxAnimation: fly_bibiyon_00
 
   - targetName: bibiyon_miyabi_00
-    graphicsDatabaseSlot: 853
     psmdModel: bibiyon_miyabi_00.bch
-    rtdxAnimation: fly_bibiyon_00
 
   - targetName: shishiko_00
-    graphicsDatabaseSlot: 872
     psmdModel: shishiko_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: kaenjishi_00
-    graphicsDatabaseSlot: 873
     psmdModel: kaenjishi_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: kaenjishi_f_00
-    graphicsDatabaseSlot: 874
     psmdModel: kaenjishi_f_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: furabebe_red_00
-    graphicsDatabaseSlot: 875
     psmdModel: furabebe_red_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: furaette_red_00
-    graphicsDatabaseSlot: 881
     psmdModel: furaette_red_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: furaajesu_red_00
-    graphicsDatabaseSlot: 887
     psmdModel: furaajesu_red_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: meekuru_00
-    graphicsDatabaseSlot: 893
     psmdModel: meekuru_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: googooto_00
-    graphicsDatabaseSlot: 894
     psmdModel: googooto_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: yanchamu_00
-    graphicsDatabaseSlot: 895
     psmdModel: yanchamu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: goronda_00
-    graphicsDatabaseSlot: 896
     psmdModel: goronda_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: torimian_00
-    graphicsDatabaseSlot: 897
     psmdModel: torimian_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: nyasupaa_00
-    graphicsDatabaseSlot: 907
     psmdModel: nyasupaa_00.bch
-    rtdxAnimation: 2leg_beast_up_00
 
   - targetName: nyaonikusu_m_00
-    graphicsDatabaseSlot: 908
     psmdModel: nyaonikusu_m_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: nyaonikusu_f_00
-    graphicsDatabaseSlot: 909
     psmdModel: nyaonikusu_f_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: hitotsuki_00
-    graphicsDatabaseSlot: 910
     psmdModel: hitotsuki_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: nidangiru_00
-    graphicsDatabaseSlot: 911
     psmdModel: nidangiru_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: girugarudo_s_00
-    graphicsDatabaseSlot: 912
     psmdModel: girugarudo_s_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: girugarudo_b_00
-    graphicsDatabaseSlot: 913
     psmdModel: girugarudo_b_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: shushupu_00
-    graphicsDatabaseSlot: 914
     psmdModel: shushupu_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: furefuwan_00
-    graphicsDatabaseSlot: 915
     psmdModel: furefuwan_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: peroppafu_00
-    graphicsDatabaseSlot: 916
     psmdModel: peroppafu_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: peroriimu_00
-    graphicsDatabaseSlot: 917
     psmdModel: peroriimu_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: maaiika_00
-    graphicsDatabaseSlot: 918
     psmdModel: maaiika_00.bch
-    rtdxAnimation: fly_masukippa_00
 
   - targetName: karamanero_00
-    graphicsDatabaseSlot: 919
     psmdModel: karamanero_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: kametete_00
-    graphicsDatabaseSlot: 920
     psmdModel: kametete_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: gamenodesu_00
-    graphicsDatabaseSlot: 921
     psmdModel: gamenodesu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: kuzumoo_00
-    graphicsDatabaseSlot: 922
     psmdModel: kuzumoo_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: doramidoro_00
-    graphicsDatabaseSlot: 923
     psmdModel: doramidoro_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: udeppou_00
-    graphicsDatabaseSlot: 924
     psmdModel: udeppou_00.bch
-    rtdxAnimation: 6leg_crab_00
 
   - targetName: burosutaa_00
-    graphicsDatabaseSlot: 925
     psmdModel: burosutaa_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: erikiteru_00
-    graphicsDatabaseSlot: 926
     psmdModel: erikiteru_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: erezaado_00
-    graphicsDatabaseSlot: 927
     psmdModel: erezaado_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: chigorasu_00
-    graphicsDatabaseSlot: 928
     psmdModel: chigorasu_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: gachigorasu_00
-    graphicsDatabaseSlot: 929
     psmdModel: gachigorasu_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: amarusu_00
-    graphicsDatabaseSlot: 930
     psmdModel: amarusu_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: amaruruga_00
-    graphicsDatabaseSlot: 931
     psmdModel: amaruruga_00.bch
-    rtdxAnimation: 4leg_beast_p2_00
 
   - targetName: ruchaburu_00
-    graphicsDatabaseSlot: 933
     psmdModel: ruchaburu_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: dedenne_00
-    graphicsDatabaseSlot: 934
     psmdModel: dedenne_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: mereshii_00
-    graphicsDatabaseSlot: 935
     psmdModel: mereshii_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: numera_00
-    graphicsDatabaseSlot: 936
     psmdModel: numera_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: numeiru_00
-    graphicsDatabaseSlot: 937
     psmdModel: numeiru_00.bch
-    rtdxAnimation: bound_human_00
 
   - targetName: numerugon_00
-    graphicsDatabaseSlot: 938
     psmdModel: numerugon_00.bch
-    rtdxAnimation: 2leg_dragon_00
 
   - targetName: kureffi_00
-    graphicsDatabaseSlot: 939
     psmdModel: kureffi_00.bch
-    rtdxAnimation: float_small_00
 
   - targetName: bokuree_00
-    graphicsDatabaseSlot: 940
     psmdModel: bokuree_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: oorotto_00
-    graphicsDatabaseSlot: 941
     psmdModel: oorotto_00.bch
-    rtdxAnimation: 6leg_crab_00
 
   - targetName: baketcha_m_00
-    graphicsDatabaseSlot: 942
     psmdModel: baketcha_m_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: baketcha_m_00
-    graphicsDatabaseSlot: 943
     psmdModel: baketcha_m_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: baketcha_m_00
-    graphicsDatabaseSlot: 944
     psmdModel: baketcha_m_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: baketcha_m_00
-    graphicsDatabaseSlot: 945
     psmdModel: baketcha_m_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: panpujin_m_00
-    graphicsDatabaseSlot: 946
     psmdModel: panpujin_m_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: panpujin_m_00
-    graphicsDatabaseSlot: 947
     psmdModel: panpujin_m_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: panpujin_m_00
-    graphicsDatabaseSlot: 948
     psmdModel: panpujin_m_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: panpujin_m_00
-    graphicsDatabaseSlot: 949
     psmdModel: panpujin_m_00.bch
-    rtdxAnimation: 2leg_human_00
 
   - targetName: kachikooru_00
-    graphicsDatabaseSlot: 950
     psmdModel: kachikooru_00.bch
-    rtdxAnimation: 4leg_doragon_00
 
   - targetName: kurebeesu_00
-    graphicsDatabaseSlot: 951
     psmdModel: kurebeesu_00.bch
-    rtdxAnimation: 4leg_doragon_00
 
   - targetName: onbatto_00
-    graphicsDatabaseSlot: 952
     psmdModel: onbatto_00.bch
-    rtdxAnimation: fly_bat_00
 
   - targetName: onbaan_00
-    graphicsDatabaseSlot: 953
     psmdModel: onbaan_00.bch
-    rtdxAnimation: fly_bird_00
 
   - targetName: zeruneasu_00
-    graphicsDatabaseSlot: 954
     psmdModel: zeruneasu_00.bch
-    rtdxAnimation: 4leg_zeruneasu_r_00
 
   - targetName: zeruneasu_r_00
-    graphicsDatabaseSlot: 955
     psmdModel: zeruneasu_r_00.bch
-    rtdxAnimation: 4leg_zeruneasu_r_00
 
   - targetName: iberutaru_00
-    graphicsDatabaseSlot: 956
     psmdModel: iberutaru_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: jigarude_00
-    graphicsDatabaseSlot: 957
     psmdModel: jigarude_00.bch
-    rtdxAnimation: dummypokemon_00
 
   - targetName: dianshii_00
-    graphicsDatabaseSlot: 958
     psmdModel: dianshii_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: dianshii_mega_00
-    graphicsDatabaseSlot: 959
     psmdModel: dianshii_mega_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: fuupa_00
-    graphicsDatabaseSlot: 960
     psmdModel: fuupa_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: fuupa_mega_00
-    graphicsDatabaseSlot: 961
     psmdModel: fuupa_mega_00.bch
-    rtdxAnimation: float_human_00
 
   - targetName: migawari_00
-    graphicsDatabaseSlot: 1122
     psmdModel: migawari_00.bch
-    rtdxAnimation: migawari_00

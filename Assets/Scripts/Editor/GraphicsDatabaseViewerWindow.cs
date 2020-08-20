@@ -52,10 +52,8 @@ public class GraphicsDatabaseViewerWindow : EditorWindow
                     EditorGUILayout.LabelField($"({names[(CreatureIndex) i+1]})", EditorStyles.boldLabel);
                 }
 
-                for (var index
-                        = 0; index < formDbEntry.PokemonGraphicsDatabaseEntryIds.Length; index++)
+                foreach (var graphicsDatabaseEntryId in formDbEntry.PokemonGraphicsDatabaseEntryIds)
                 {
-                    var graphicsDatabaseEntryId = formDbEntry.PokemonGraphicsDatabaseEntryIds[index];
                     if (graphicsDatabaseEntryId == 0 || graphicsDatabaseEntryId + 1 >= graphicsDbEntries.Count)
                         continue;
 

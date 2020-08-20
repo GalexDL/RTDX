@@ -8,7 +8,7 @@ public static class SkyEditorHelpers
         return new RtdxRom(useBuiltRom ? ConfigManager.BuildDir : ConfigManager.SourceDir, PhysicalFileSystem.Instance);
     }
     
-    public static void SaveRom(RtdxRom rom)
+    public static void SaveRom(IRtdxRom rom)
     {
         rom.Save(ConfigManager.BuildDir, PhysicalFileSystem.Instance);
     }
