@@ -76,3 +76,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Rr]esources/[Dd]efault[Tt]extures*
 /[Aa]ssets/[Gg]ame[Aa]ssets*
 /[Bb]uild/*
+/[Dd]ata/config.yml
