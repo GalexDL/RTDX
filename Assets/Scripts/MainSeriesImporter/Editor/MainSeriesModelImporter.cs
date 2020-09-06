@@ -546,106 +546,114 @@ public class MainSeriesModelImporter : EditorWindow, IHasCustomMenu
 
     public IEnumerator Save()
     {
-        string importDir = ImportHelpers.CreateDirectoryForImport(_targetModelName);
-        string animationsDir = Path.Combine(importDir, "Animations");
-        string modelAnimationsDir = Path.Combine(importDir, "ModelAnimations");
-        ImportHelpers.EnsureDirectoryExists(animationsDir);
-        if (_animationClips.Any(clip => clip.belongsToModelBundle))
+        try
         {
-            ImportHelpers.EnsureDirectoryExists(modelAnimationsDir);
+            string importDir = ImportHelpers.CreateDirectoryForImport(_targetModelName);
+            string animationsDir = Path.Combine(importDir, "Animations");
+            string modelAnimationsDir = Path.Combine(importDir, "ModelAnimations");
+            ImportHelpers.EnsureDirectoryExists(animationsDir);
+            if (_animationClips.Any(clip => clip.belongsToModelBundle))
+            {
+                ImportHelpers.EnsureDirectoryExists(modelAnimationsDir);
+            }
+
+            ResetMouth();
+
+            var bodyAnimationProcessor = new BodyAnimationProcessor
+            {
+                SourceObject = _sourceObject,
+                TargetObject = _targetObject,
+                BodyAnimations = BodyAnimations.ToArray()
+            };
+            yield return bodyAnimationProcessor.ExportBodyAnimation(modelAnimationsDir, animationsDir,
+                _targetModelName, _targetAnimationBundleName, _footCorrection);
+
+            EditorUtility.DisplayProgressBar("Animation transfer", "Importing eye animations...", .9f);
+
+            TextureAnimationImporter.Import(ConfigManager.AssetBundleSourcePath + "/" + _sourceModelBundle,
+                modelAnimationsDir, _targetModelName,
+                TextureAnimationImporter.AnimationType.Eyes,
+                _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
+            TextureAnimationImporter.Import(_sourceAnimationBundle.FullName, animationsDir,
+                _targetAnimationBundleName,
+                TextureAnimationImporter.AnimationType.Eyes,
+                _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
+
+            EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 1/4)...", .92f);
+
+            var importedAnims = TextureAnimationImporter.Import(
+                ConfigManager.AssetBundleSourcePath + "/" + _sourceModelBundle,
+                modelAnimationsDir,
+                _targetModelName,
+                TextureAnimationImporter.AnimationType.Mouth,
+                _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
+
+            if (_createSkeletalMouthAnimations)
+            {
+                EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 2/4)...",
+                    .94f);
+
+                MouthAnimationProcessor.CreateSkeletalMouthAnimationsFromTextureAnimations(importedAnims, _mouthModel,
+                    _targetObject.transform.FindDeepChild("PG_root"));
+            }
+
+            EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 3/4)...", .96f);
+
+            importedAnims = TextureAnimationImporter.Import(_sourceAnimationBundle.FullName,
+                animationsDir,
+                _targetAnimationBundleName,
+                TextureAnimationImporter.AnimationType.Mouth,
+                _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
+
+            if (_createSkeletalMouthAnimations)
+            {
+                EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 4/4)...",
+                    .98f);
+
+                MouthAnimationProcessor.CreateSkeletalMouthAnimationsFromTextureAnimations(importedAnims, _mouthModel,
+                    _targetObject.transform.FindDeepChild("PG_root"));
+            }
+
+            ResetMouth();
+
+            EditorUtility.DisplayProgressBar("Animation transfer", "Saving model...", 1f);
+
+            RemoveConstraints();
+
+            foreach (var bindposeStore in _targetObject.GetComponentsInChildren<BindposeStore>())
+            {
+                bindposeStore.Restore();
+                DestroyImmediate(bindposeStore);
+            }
+
+            string prefabPath = Path.Combine(importDir, $"{_targetModelName}.prefab").ToAssetPath();
+            ImportHelpers.GeneratePrefabForModel(_targetObject, prefabPath,
+                Path.Combine(importDir, "Meshes").ToAssetPath());
+            AssetImporter.GetAtPath(prefabPath).assetBundleName = _targetModelName;
+
+            EditorUtility.DisplayProgressBar("Animation transfer", "Creating resource files...", 1f);
+
+            CreateResourceFile(_targetModelName, importDir, clip => clip.belongsToModelBundle, true);
+            CreateResourceFile(_targetAnimationBundleName, importDir, clip => !clip.belongsToModelBundle, false);
+
+            EditorUtility.DisplayProgressBar("Animation transfer", "Refreshing asset database...", 1f);
+
+            AssetDatabase.Refresh();
+
+            EditorUtility.DisplayProgressBar("Animation transfer", "Building asset bundles...", 1f);
+
+            if (_buildAssetBundlesAfterImport)
+            {
+                AbBuilder.Build(new[] {_targetModelName, _targetAnimationBundleName});
+            }
+
+            DestroyImmediate(_sourceObject);
+            DestroyImmediate(_targetObject);
         }
-        
-        ResetMouth();
-
-        var bodyAnimationProcessor = new BodyAnimationProcessor
+        finally
         {
-            SourceObject = _sourceObject,
-            TargetObject = _targetObject,
-            BodyAnimations = BodyAnimations.ToArray()
-        };
-        yield return bodyAnimationProcessor.ExportBodyAnimation(modelAnimationsDir, animationsDir,
-            _targetModelName, _targetAnimationBundleName, _footCorrection);
-        
-        EditorUtility.DisplayProgressBar("Animation transfer", "Importing eye animations...", .9f);
-
-        TextureAnimationImporter.Import(ConfigManager.AssetBundleSourcePath + "/" + _sourceModelBundle,
-            modelAnimationsDir, _targetModelName,
-            TextureAnimationImporter.AnimationType.Eyes, _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
-        TextureAnimationImporter.Import(_sourceAnimationBundle.FullName, animationsDir,
-            _targetAnimationBundleName,
-            TextureAnimationImporter.AnimationType.Eyes, _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
-
-        EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 1/4)...", .92f);
-
-        var importedAnims = TextureAnimationImporter.Import(
-            ConfigManager.AssetBundleSourcePath + "/" + _sourceModelBundle,
-            modelAnimationsDir,
-            _targetModelName,
-            TextureAnimationImporter.AnimationType.Mouth,
-            _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
-
-        if (_createSkeletalMouthAnimations)
-        {
-            EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 2/4)...",
-                .94f);
-
-            MouthAnimationProcessor.CreateSkeletalMouthAnimationsFromTextureAnimations(importedAnims, _mouthModel,
-                _targetObject.transform.FindDeepChild("PG_root"));
+            EditorUtility.ClearProgressBar();
         }
-
-        EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 3/4)...", .96f);
-        
-        importedAnims = TextureAnimationImporter.Import(_sourceAnimationBundle.FullName,
-            animationsDir,
-            _targetAnimationBundleName,
-            TextureAnimationImporter.AnimationType.Mouth,
-            _targetObject.GetComponentsInChildren<SkinnedMeshRenderer>());
-
-        if (_createSkeletalMouthAnimations)
-        {
-            EditorUtility.DisplayProgressBar("Animation transfer", "Generating mouth animations (Step 4/4)...", .98f);
-
-            MouthAnimationProcessor.CreateSkeletalMouthAnimationsFromTextureAnimations(importedAnims, _mouthModel,
-                _targetObject.transform.FindDeepChild("PG_root"));
-        }
-
-        ResetMouth();
-
-        EditorUtility.DisplayProgressBar("Animation transfer", "Saving model...", 1f);
-
-        RemoveConstraints();
-
-        foreach (var bindposeStore in _targetObject.GetComponentsInChildren<BindposeStore>())
-        {
-            bindposeStore.Restore();
-            DestroyImmediate(bindposeStore);
-        }
-
-        string prefabPath = Path.Combine(importDir, $"{_targetModelName}.prefab").ToAssetPath();
-        ImportHelpers.GeneratePrefabForModel(_targetObject, prefabPath,
-            Path.Combine(importDir, "Meshes").ToAssetPath());
-        AssetImporter.GetAtPath(prefabPath).assetBundleName = _targetModelName;
-        
-        EditorUtility.DisplayProgressBar("Animation transfer", "Creating resource files...", 1f);
-
-        CreateResourceFile(_targetModelName, importDir, clip => clip.belongsToModelBundle, true);
-        CreateResourceFile(_targetAnimationBundleName, importDir, clip => !clip.belongsToModelBundle, false);
-
-        EditorUtility.DisplayProgressBar("Animation transfer", "Refreshing asset database...", 1f);
-
-        AssetDatabase.Refresh();
-        
-        EditorUtility.DisplayProgressBar("Animation transfer", "Building asset bundles...", 1f);
-
-        if (_buildAssetBundlesAfterImport)
-        {
-            AbBuilder.Build(new[] {_targetModelName, _targetAnimationBundleName});
-        }
-
-        EditorUtility.ClearProgressBar();
-        
-        DestroyImmediate(_sourceObject);
-        DestroyImmediate(_targetObject);
     }
     
     #endregion

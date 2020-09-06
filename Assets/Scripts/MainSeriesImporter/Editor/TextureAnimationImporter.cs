@@ -3,6 +3,7 @@ using System.Linq;
 using AssetStudio;
 using SkyEditor.IO.FileSystem;
 using UnityEditor;
+using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 
 public static class TextureAnimationImporter
@@ -78,7 +79,9 @@ public static class TextureAnimationImporter
             if (uCoordKey == null || vCoordKey == null)
                 continue;
 
-            Vector2 value = RtdxTextureTo2x4Mappings[new Vector2(uCoordKey.value, vCoordKey.value)];
+            // Round to 0.25 steps since the input UVs might not match perfectly
+            var roundedUv = new Vector2(Mathf.Round(uCoordKey.value * 4) / 4, Mathf.Round(vCoordKey.value * 4) / 4);
+            var value = RtdxTextureTo2x4Mappings[roundedUv];
 
             uCurve.AddKey(streamedFrames[frameIndex].time, value.x);
             vCurve.AddKey(streamedFrames[frameIndex].time, value.y);
