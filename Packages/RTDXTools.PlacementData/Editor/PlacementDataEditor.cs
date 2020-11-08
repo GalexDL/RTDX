@@ -105,7 +105,8 @@ public class PlacementDataEditor : IDataFileEditor
            ((FileInfo) _file.DestinationFile).CopyTo(fileName + ".bak", true);
         }
 
-        File.WriteAllText(_file.DestinationFile.FullName, sb.ToString());
+        ImportHelpers.EnsureDirectoryExists(Path.GetDirectoryName(fileName));
+        File.WriteAllText(fileName, sb.ToString());
         Debug.Log("Saved to " + fileName);
     }
 
